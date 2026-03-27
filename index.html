@@ -1,0 +1,3320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-cms="page-title">Dot Business | Agentic Marketing & AI Automation</title>
+<meta name="description" data-cms="page-description" content="Where AI agents enhance your online visibility, build your brand, and accelerate growth.">
+<!-- Google Site Verification placeholder -->
+<meta id="google-site-verification" name="google-site-verification" content="">
+<!-- Google Analytics placeholder -->
+<script id="ga-script"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white: #ffffff;
+    --off-white: #f8f9fc;
+    --light-grey: #f1f3f7;
+    --mid-grey: #e2e6ed;
+    --grey: #8b95a1;
+    --dark-grey: #4a5568;
+    --text: #1a1f2e;
+    --accent: #0066ff;
+    --accent-dark: #0052cc;
+    --accent-light: #e8f0ff;
+    --green: #00c48c;
+    --green-light: #e6faf5;
+    --icon-grey: #adb5bd;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.10);
+    --radius: 12px;
+    --radius-lg: 20px;
+    --font-main: 'Sora', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* PAGES */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--mid-grey);
+    padding: 0 5%;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    gap: 24px;
+  }
+
+  /* LOGO */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--accent);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .logo-mark::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+  }
+
+  .logo-mark::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    position: absolute;
+  }
+
+  .logo-text {
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .logo-text span {
+    color: var(--accent);
+  }
+
+  /* NAV LINKS */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+  }
+
+  .nav-links a, .nav-links button {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--dark-grey);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover, .nav-links button:hover {
+    background: var(--light-grey);
+    color: var(--text);
+  }
+
+  /* DROPDOWN */
+  .dropdown { position: relative; }
+
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .dropdown-toggle::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentColor;
+    transition: transform var(--transition);
+  }
+
+  .dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 8px;
+    min-width: 220px;
+    z-index: 999;
+  }
+
+  .dropdown:hover .dropdown-menu { display: block; }
+
+  .dropdown-menu-inner {
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    padding: 8px;
+  }
+
+  .dropdown-menu a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+  }
+
+  /* PHONE */
+  .nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--dark-grey);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav-phone svg { flex-shrink: 0; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.875rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all var(--transition);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 10px 20px;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0,102,255,0.3);
+  }
+
+  .btn-primary-lg {
+    padding: 14px 28px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--accent);
+    padding: 10px 20px;
+    border: 2px solid var(--accent);
+  }
+
+  .btn-outline:hover {
+    background: var(--accent-light);
+  }
+
+  .btn-green {
+    background: var(--green);
+    color: white;
+    padding: 14px 28px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+
+  .btn-green:hover {
+    background: #00a878;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0,196,140,0.3);
+  }
+
+  /* NAV RIGHT */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all var(--transition);
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid var(--mid-grey);
+    padding: 16px 5%;
+    z-index: 850;
+    box-shadow: var(--shadow-md);
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a, .mobile-menu button {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--dark-grey);
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--light-grey);
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-body);
+    width: 100%;
+  }
+
+  .mobile-menu a:last-child { border-bottom: none; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--white);
+    padding: 100px 5% 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(0,102,255,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero h1 {
+    font-family: var(--font-main);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    max-width: 820px;
+    margin: 0 auto 20px;
+  }
+
+  .hero h1 span { color: var(--accent); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--dark-grey);
+    max-width: 560px;
+    margin: 0 auto 40px;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ─── SECTION LAYOUT ─── */
+  section {
+    padding: 80px 5%;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .section-headline {
+    font-family: var(--font-main);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--text);
+    max-width: 680px;
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--dark-grey);
+    margin-top: 16px;
+    max-width: 620px;
+    line-height: 1.7;
+  }
+
+  /* ─── PRODUCTS GRID ─── */
+  .products-section {
+    background: var(--off-white);
+  }
+
+  .products-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .products-header .section-headline,
+  .products-header .section-sub {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 580px;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .product-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+  }
+
+  .product-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .product-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--icon-grey);
+  }
+
+  .product-card h3 {
+    font-family: var(--font-main);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .product-card p {
+    font-size: 0.875rem;
+    color: var(--dark-grey);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .product-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 4px;
+  }
+
+  .product-link svg { transition: transform var(--transition); }
+  .product-card:hover .product-link svg { transform: translateX(4px); }
+
+  .product-card-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+    background: var(--light-grey);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  .product-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  .product-card-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--icon-grey);
+    font-size: 0.75rem;
+  }
+
+  .product-card-image-placeholder svg {
+    width: 24px;
+    height: 24px;
+    opacity: 0.4;
+  }
+
+  /* ─── CTA BAND ─── */
+  .cta-band {
+    background: linear-gradient(135deg, #0a1628 0%, #0d2045 100%);
+    color: white;
+    text-align: center;
+  }
+
+  .cta-band .section-headline {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-band .section-sub {
+    color: rgba(255,255,255,0.7);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-band .section-label {
+    color: var(--green);
+  }
+
+  /* ─── FEATURES SECTION ─── */
+  .features-section {
+    background: var(--white);
+  }
+
+  .features-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .feature-check {
+    width: 24px;
+    height: 24px;
+    background: var(--green-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .feature-check svg {
+    width: 13px;
+    height: 13px;
+    color: var(--green);
+  }
+
+  .feature-text {
+    font-size: 0.95rem;
+    color: var(--dark-grey);
+    line-height: 1.6;
+  }
+
+  .features-visual {
+    background: var(--light-grey);
+    border-radius: var(--radius-lg);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .features-visual-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 32px;
+    width: 100%;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .stat-num {
+    font-family: var(--font-main);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent);
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--dark-grey);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #0a1628;
+    color: rgba(255,255,255,0.7);
+    padding: 60px 5% 32px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand .logo-text { color: white; }
+  .footer-brand .logo-text span { color: var(--accent); }
+
+  .footer-tagline {
+    font-size: 0.875rem;
+    margin: 16px 0 24px;
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  .footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-contact-item svg { flex-shrink: 0; margin-top: 2px; }
+
+  .footer-heading {
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+  }
+
+  .footer-links a, .footer-links button {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color var(--transition);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-body);
+    padding: 0;
+  }
+
+  .footer-links a:hover, .footer-links button:hover { color: white; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .btn-footer-cta {
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all var(--transition);
+  }
+
+  .btn-footer-cta:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: white;
+  }
+
+  /* ─── POPUP ─── */
+  .popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,22,40,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .popup-overlay.open { display: flex; }
+
+  .popup-box {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    animation: popupIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes popupIn {
+    from { transform: scale(0.9) translateY(20px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: var(--light-grey);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--grey);
+    transition: all var(--transition);
+  }
+
+  .popup-close:hover { background: var(--mid-grey); color: var(--text); }
+
+  .popup-box h2 {
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .popup-box > p {
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+    margin-bottom: 24px;
+    line-height: 1.65;
+  }
+
+  .popup-intent {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .intent-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .intent-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1.5px solid var(--mid-grey);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-size: 0.875rem;
+    color: var(--dark-grey);
+  }
+
+  .intent-option:hover {
+    border-color: var(--accent);
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+
+  .intent-option input { accent-color: var(--accent); }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .form-field input {
+    padding: 11px 14px;
+    border: 1.5px solid var(--mid-grey);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color var(--transition);
+    outline: none;
+  }
+
+  .form-field input:focus { border-color: var(--accent); }
+
+  .form-fields-single {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .popup-submit {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 10px;
+    justify-content: center;
+  }
+
+  .popup-note {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--grey);
+    margin-top: 12px;
+  }
+
+  /* SUCCESS STATE */
+  .popup-success {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .success-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--green-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+
+  .popup-success h3 {
+    font-family: var(--font-main);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .popup-success p {
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+  }
+
+  /* ─── PRODUCT PAGES ─── */
+  .product-hero {
+    padding: 80px 5% 60px;
+    background: var(--white);
+    border-bottom: 1px solid var(--mid-grey);
+  }
+
+  .product-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .product-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+
+  .product-hero h1 {
+    font-family: var(--font-main);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .product-hero-sub {
+    font-size: 1.05rem;
+    color: var(--dark-grey);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .platform-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 24px 0;
+  }
+
+  .platform-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border: 1.5px solid var(--mid-grey);
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+    background: var(--white);
+  }
+
+  .platform-badge img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .platform-badge svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .product-hero-image {
+    background: var(--light-grey);
+    border-radius: var(--radius-lg);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .product-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: var(--grey);
+    font-size: 0.85rem;
+  }
+
+  .image-placeholder svg {
+    width: 40px;
+    height: 40px;
+    opacity: 0.4;
+  }
+
+  .product-content {
+    padding: 64px 5%;
+    background: var(--off-white);
+  }
+
+  .product-content-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .product-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .product-feature-card {
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+  }
+
+  .product-feature-card h3 {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .product-feature-card p {
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+    line-height: 1.65;
+  }
+
+  .quote-block {
+    background: var(--white);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 24px 28px;
+    margin: 40px 0;
+  }
+
+  .quote-block p {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+
+  .quote-source {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mckinsey-badge {
+    background: #00237a;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .product-cta-band {
+    background: var(--accent);
+    color: white;
+    padding: 60px 5%;
+    text-align: center;
+  }
+
+  .product-cta-band h2 {
+    font-family: var(--font-main);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+
+  .product-cta-band p {
+    opacity: 0.85;
+    margin-bottom: 28px;
+    font-size: 1rem;
+  }
+
+  /* ─── CONTACT PAGE ─── */
+  .contact-section {
+    padding: 80px 5%;
+  }
+
+  .contact-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .contact-info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--mid-grey);
+  }
+
+  .contact-info-card:last-child { border-bottom: none; }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--accent-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon svg { color: var(--accent); }
+
+  .contact-info-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+
+  .contact-info-value {
+    font-size: 0.95rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ─── AI CHAT PLACEHOLDER ─── */
+  #ai-chat-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 800;
+  }
+
+  .chat-trigger {
+    width: 56px;
+    height: 56px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,102,255,0.35);
+    transition: all var(--transition);
+  }
+
+  .chat-trigger:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 28px rgba(0,102,255,0.4);
+  }
+
+  .chat-window {
+    display: none;
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 320px;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    border: 1px solid var(--mid-grey);
+  }
+
+  .chat-window.open { display: block; }
+
+  .chat-header {
+    background: var(--accent);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .chat-avatar {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chat-header-text h4 {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .chat-header-text p {
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+
+  .chat-body {
+    padding: 20px;
+    min-height: 200px;
+  }
+
+  .chat-placeholder {
+    text-align: center;
+    color: var(--grey);
+    font-size: 0.85rem;
+    padding: 20px;
+  }
+
+  /* ─── ADMIN PANEL ─── */
+  .admin-login {
+    min-height: 100vh;
+    background: var(--off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .admin-login-box {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--mid-grey);
+  }
+
+  .admin-login-box h1 {
+    font-family: var(--font-main);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+
+  .admin-login-box > p {
+    font-size: 0.875rem;
+    color: var(--dark-grey);
+    margin-bottom: 32px;
+  }
+
+  .admin-error {
+    background: #fff0f0;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    color: #c62828;
+    margin-bottom: 16px;
+    display: none;
+  }
+
+  .admin-error.show { display: block; }
+
+  .admin-panel {
+    min-height: 100vh;
+    background: var(--off-white);
+    display: none;
+  }
+
+  .admin-panel.active { display: flex; }
+
+  .admin-sidebar {
+    width: 240px;
+    background: #0a1628;
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  .admin-sidebar-logo {
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .admin-sidebar-logo .logo-text { color: white; }
+  .admin-sidebar-logo .logo-text span { color: var(--accent); }
+
+  .admin-nav {
+    flex: 1;
+    padding: 16px 0;
+  }
+
+  .admin-nav-section {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 20px 20px 8px;
+  }
+
+  .admin-nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-body);
+    transition: all var(--transition);
+    border-radius: 0;
+  }
+
+  .admin-nav-btn:hover { color: white; background: rgba(255,255,255,0.05); }
+  .admin-nav-btn.active { color: white; background: rgba(0,102,255,0.2); border-right: 3px solid var(--accent); }
+  .admin-nav-btn svg { opacity: 0.7; flex-shrink: 0; }
+
+  .admin-main {
+    flex: 1;
+    padding: 32px;
+    overflow-y: auto;
+  }
+
+  .admin-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--mid-grey);
+  }
+
+  .admin-topbar h1 {
+    font-family: var(--font-main);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .admin-section { display: none; }
+  .admin-section.active { display: block; }
+
+  .cms-card {
+    background: white;
+    border: 1px solid var(--mid-grey);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+
+  .cms-card-title {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+
+  .cms-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .cms-field:last-child { margin-bottom: 0; }
+
+  .cms-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--dark-grey);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .cms-input {
+    padding: 10px 14px;
+    border: 1.5px solid var(--mid-grey);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color var(--transition);
+    outline: none;
+    width: 100%;
+  }
+
+  .cms-input:focus { border-color: var(--accent); }
+
+  .cms-textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: var(--font-body);
+  }
+
+  .cms-save-btn {
+    margin-top: 8px;
+  }
+
+  .admin-save-all {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+
+  .admin-save-all:hover { background: var(--accent-dark); }
+
+  .admin-logout-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.6);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    margin: 16px 20px;
+  }
+
+  .admin-logout-btn:hover { border-color: rgba(255,255,255,0.3); color: white; }
+
+  .settings-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .danger-zone {
+    border-color: #ffcdd2;
+    background: #fff8f8;
+  }
+
+  .danger-zone .cms-card-title { color: #c62828; border-bottom-color: #ffcdd2; }
+
+  .btn-danger {
+    background: #c62828;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+
+  .btn-danger:hover { background: #b71c1c; }
+
+  .save-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--green);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    z-index: 9999;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .save-toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-layout { grid-template-columns: 1fr; gap: 40px; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .product-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .product-feature-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .settings-row { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links, .nav-phone { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 56px 4%; }
+    .hero { padding: 60px 4% 50px; }
+    .products-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .form-row { grid-template-columns: 1fr; }
+    .popup-box { padding: 32px 24px; }
+    .admin-panel { flex-direction: column; }
+    .admin-sidebar { width: 100%; min-height: auto; }
+    .admin-nav { display: flex; overflow-x: auto; padding: 8px 12px; }
+    .admin-nav-section { display: none; }
+    .admin-nav-btn { white-space: nowrap; border-right: none !important; border-bottom: 2px solid transparent; }
+    .admin-nav-btn.active { border-bottom-color: var(--accent); background: rgba(0,102,255,0.15); }
+    .admin-sidebar-logo { padding: 16px; }
+    .admin-main { padding: 20px 16px; }
+    .product-hero { padding: 48px 4% 40px; }
+    .product-content { padding: 40px 4%; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-inner { padding: 0; }
+    .btn-primary-lg { width: 100%; justify-content: center; }
+    .hero-cta { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" onclick="showPage('home')">
+      <div class="logo-mark"></div>
+      <span class="logo-text" data-cms="logo-text">Dot<span>Business</span></span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a onclick="showPage('home')" style="cursor:pointer">Home</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Solutions</button>
+        <div class="dropdown-menu">
+          <div class="dropdown-menu-inner">
+            <a href="javascript:void(0)" onclick="showProductPage('search-ai')">Search AI</a>
+            <a href="javascript:void(0)" onclick="showProductPage('reviews-ai')">Reviews AI</a>
+            <a href="javascript:void(0)" onclick="showProductPage('social-ai')">Social Media AI</a>
+            <a href="javascript:void(0)" onclick="showProductPage('listings-ai')">Listings AI</a>
+            <a href="javascript:void(0)" onclick="showProductPage('marketing-auto')">Marketing Automation</a>
+            <a href="javascript:void(0)" onclick="showProductPage('web-design')">Web Design</a>
+          </div>
+        </div>
+      </li>
+      <li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="tel:02393190121" class="nav-phone">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.11 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.45-.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        <span data-cms="nav-phone">02393 190 121</span>
+      </a>
+      <button class="btn btn-primary" onclick="openPopup()">Get Started</button>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');closeMobileMenu()">Home</a>
+  <a onclick="showProductPage('search-ai');closeMobileMenu()">Search AI</a>
+  <a onclick="showProductPage('reviews-ai');closeMobileMenu()">Reviews AI</a>
+  <a onclick="showProductPage('social-ai');closeMobileMenu()">Social Media AI</a>
+  <a onclick="showProductPage('listings-ai');closeMobileMenu()">Listings AI</a>
+  <a onclick="showProductPage('marketing-auto');closeMobileMenu()">Marketing Automation</a>
+  <a onclick="showProductPage('web-design');closeMobileMenu()">Web Design</a>
+  <a onclick="showPage('contact');closeMobileMenu()">Contact</a>
+  <button onclick="openPopup();closeMobileMenu()" style="color:var(--accent);font-weight:700;margin-top:8px;">Get Started →</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">AI-Powered Digital Marketing</div>
+    <h1 data-cms="hero-heading">Agentic Marketing and <span>AI Automation</span> for Business</h1>
+    <p class="hero-sub" data-cms="hero-sub">Where AI agents enhance your online visibility, build your brand, and accelerate growth.</p>
+    <div class="hero-cta">
+      <button class="btn btn-primary btn-primary-lg" onclick="openPopup()">Get Started Free</button>
+      <button class="btn btn-outline btn-primary-lg" onclick="showPage('contact')">Talk to Us</button>
+    </div>
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <section class="products-section">
+    <div class="section-inner">
+      <div class="products-header">
+        <span class="section-label">Our Solutions</span>
+        <h2 class="section-headline" data-cms="products-headline">Multi-location Marketing is hard. AI agents make it easy.</h2>
+        <p class="section-sub" data-cms="products-sub">Six specialist AI solutions, working together to grow your business.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card" onclick="showProductPage('search-ai')">
+          <div class="product-card-image">
+            <div class="product-card-image-placeholder" id="ph-card-p1-img">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Image coming soon
+            </div>
+            <img data-cms-img="card-p1-img" src="" alt="Search AI">
+          </div>
+          <h3 data-cms="p1-name">Search AI</h3>
+          <p data-cms="p1-desc">AI Search is replacing traditional web search. Most businesses remain invisible to AI answer engines. Search AI delivers visibility across all AI platforms.</p>
+          <span class="product-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="product-card" onclick="showProductPage('reviews-ai')">
+          <div class="product-card-image">
+            <div class="product-card-image-placeholder" id="ph-card-p2-img">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Image coming soon
+            </div>
+            <img data-cms-img="card-p2-img" src="" alt="Reviews AI">
+          </div>
+          <h3 data-cms="p2-name">Reviews AI</h3>
+          <p data-cms="p2-desc">Reviews AI Agents turn reputation into revenue by automating review requests, responses, and marketing.</p>
+          <span class="product-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="product-card" onclick="showProductPage('social-ai')">
+          <div class="product-card-image">
+            <div class="product-card-image-placeholder" id="ph-card-p3-img">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Image coming soon
+            </div>
+            <img data-cms-img="card-p3-img" src="" alt="Social Media AI">
+          </div>
+          <h3 data-cms="p3-name">Social Media AI</h3>
+          <p data-cms="p3-desc">Social AI Agents author on brand material, publish at peak times, and ensure your business looks active and attractive online.</p>
+          <span class="product-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="product-card" onclick="showProductPage('listings-ai')">
+          <div class="product-card-image">
+            <div class="product-card-image-placeholder" id="ph-card-p4-img">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Image coming soon
+            </div>
+            <img data-cms-img="card-p4-img" src="" alt="Listings AI">
+          </div>
+          <h3 data-cms="p4-name">Listings AI</h3>
+          <p data-cms="p4-desc">Listings AI Agents optimise presence with uniform branding and information across platforms, boosting visibility and growth.</p>
+          <span class="product-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="product-card" onclick="showProductPage('marketing-auto')">
+          <div class="product-card-image">
+            <div class="product-card-image-placeholder" id="ph-card-p5-img">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Image coming soon
+            </div>
+            <img data-cms-img="card-p5-img" src="" alt="Marketing Automation">
+          </div>
+          <h3 data-cms="p5-name">Marketing Automation</h3>
+          <p data-cms="p5-desc">Outreach on autopilot. Marketing Automation AI Agents run email, chatbot, and SMS campaigns personalised for your customers.</p>
+          <span class="product-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+        <div class="product-card" onclick="showProductPage('web-design')">
+          <div class="product-card-image">
+            <div class="product-card-image-placeholder" id="ph-card-p6-img">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Image coming soon
+            </div>
+            <img data-cms-img="card-p6-img" src="" alt="Web Design">
+          </div>
+          <h3 data-cms="p6-name">Web Design</h3>
+          <p data-cms="p6-desc">Beautiful websites that convert. AI customised web sites that build trust, attract customers, and stand out.</p>
+          <span class="product-link">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND 1 -->
+  <section class="cta-band">
+    <div class="section-inner" style="text-align:center">
+      <span class="section-label">The AI Shift</span>
+      <h2 class="section-headline" style="margin:0 auto 16px; color:white;" data-cms="cta1-heading">AI Is About To Affect Every Business — Are You Ready?</h2>
+      <p class="section-sub" style="margin:0 auto 32px; color:rgba(255,255,255,0.7);" data-cms="cta1-sub">If your business is invisible to AI you are missed in over a third of all customer searches. Next year it will be over half. We set you up with tools to guarantee your business is found by AI first.</p>
+      <button class="btn btn-green btn-primary-lg" onclick="openPopup()">Free AI Health Check</button>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features-section">
+    <div class="section-inner">
+      <div class="features-layout">
+        <div>
+          <span class="section-label">Why Dot Business</span>
+          <h2 class="section-headline" data-cms="feat-heading">AI Isn't Going To Destroy Your Business, But If Your Competitors Use It Properly, They Might.</h2>
+          <p class="section-sub" data-cms="feat-sub">AI optimisation is going to cost some businesses thousands, and make others hundreds of thousands in profit. We make sure you come out on the right side of the equation.</p>
+          <div class="features-list">
+            <div class="feature-item">
+              <div class="feature-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span class="feature-text" data-cms="feat1">Proven AI search & marketing frameworks</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span class="feature-text" data-cms="feat2">AI-driven decision support</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span class="feature-text" data-cms="feat3">Automation that removes friction from sales and service</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span class="feature-text" data-cms="feat4">Conversion-focused execution</span>
+            </div>
+          </div>
+          <div style="margin-top:36px">
+            <button class="btn btn-primary btn-primary-lg" onclick="openPopup()">Let's Talk</button>
+          </div>
+        </div>
+        <div class="features-visual">
+          <div class="features-visual-inner">
+            <div class="stat-card">
+              <div>
+                <div class="stat-num">50%</div>
+                <div class="stat-label">of consumers use AI-powered search</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div>
+                <div class="stat-num">33%</div>
+                <div class="stat-label">of searches already bypass Google</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div>
+                <div class="stat-num" style="color:var(--green)">3x</div>
+                <div class="stat-label">more leads from AI-optimised listings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /home page -->
+
+<!-- ═══════════════════════════════════════════════════════
+     PRODUCT PAGES
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-product">
+
+  <!-- SEARCH AI -->
+  <div class="product-content-wrapper" id="prod-search-ai">
+    <div class="product-hero">
+      <div class="product-hero-inner">
+        <div>
+          <div class="product-hero-badge">Search AI</div>
+          <h1 data-cms="sai-h1">Be the Top Answer for Every Location on Gemini, ChatGPT, Claude, Perplexity.</h1>
+          <p class="product-hero-sub" data-cms="sai-sub">AI agents track, ensure, and boost Answer Engine visibility.</p>
+          <div class="platform-logos">
+            <span class="platform-badge">
+              <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gem1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4285f4"/><stop offset="100%" stop-color="#8ab4f8"/></linearGradient></defs><path d="M96 16C96 16 56 76 56 96s40 80 40 80 40-60 40-80S96 16 96 16z" fill="url(#gem1)"/><path d="M16 96c0 0 60 40 80 40s80-40 80-40-60-40-80-40S16 96 16 96z" fill="#4285f4" opacity="0.7"/></svg>
+              Gemini
+            </span>
+            <span class="platform-badge">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#10a37f"/><path d="M33.5 19.2a8.5 8.5 0 00-1-6.9 8.6 8.6 0 00-9.2-3.9A8.5 8.5 0 0016.7 12a8.5 8.5 0 00-5.7 4.2 8.6 8.6 0 001 9.4 8.5 8.5 0 00.5 6.9 8.6 8.6 0 009.3 3.9 8.5 8.5 0 006.3 2.8 8.6 8.6 0 008.2-6 8.5 8.5 0 005.6-4.1 8.6 8.6 0 00-8.4-9.9zM27.1 35a6.4 6.4 0 01-4.1-1.5l.2-.1 6.8-3.9a1.1 1.1 0 00.6-1v-9.5l2.9 1.7v7.7A6.4 6.4 0 0127.1 35zm-13.8-5.9a6.4 6.4 0 01-.8-4.3l.2.1 6.8 3.9a1.1 1.1 0 001.1 0l8.3-4.8v3.3l-8.4 4.9a6.4 6.4 0 01-7.2-3.1zm-1.8-14.8a6.4 6.4 0 013.3-2.8v8a1.1 1.1 0 00.6 1l8.3 4.8-2.9 1.7-6.8-3.9a6.4 6.4 0 01-2.5-8.8zm16.6 5.1l-3.4-2-3.4 2v-3.3l3.4-2 3.4 2v3.3zm1.5 9.6l-.2-.1-6.8-3.9a1.1 1.1 0 00-1.1 0l-8.3 4.8v-3.3l8.3-4.8 6.8 3.9.1.1V29zm1.6-4.4l-2.9-1.7V19a6.4 6.4 0 01-10.5-4.9l.2-.1 6.8-3.9a1.1 1.1 0 011.1 0l8.3 4.8-2.5 1.4-.5.3z" fill="white"/></svg>
+              ChatGPT
+            </span>
+            <span class="platform-badge"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCABAAEADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDocmjPFMo5r895j9rsP3Y6mjPFevfBLT/DOqWmsWup6faXeoZUhblA/wC5xj5QenzdSOeRXn3jXw8/hfxzfaPhvIR/Mt2P8UTcr+XT6g11Tw8o0Y1r3T/A8+jmEKmKnhLWlHX1/q5hZNGa9K1vwjoWl/s+aVrxtiNWu5IpPtG85O/cduOm0KPzGa4rQfC3iDxM866Hpst35C7pGBCquegySBk+nWpqUJwlGFrtq+hdDHUqsJVb2jFtXem36GVk0ZpGV0kZHVkZSQysMEEdQRTa5+Y7bCZNd58LYPBd5r13YeL4YHaeNUszcMVj3ZO4ZBGGPGCfcV5/uwOa6P8A4QTxqbVJx4V1N4pFDqyw7sgjI4FaYdyjNTjHmt0tc5sdGE6TpzqcnNs72fyO/wBY8Ea58MvFkHi7w2JtQ0qB8zRDmWOM/eRx/EpH8Q6HGfWtv4vaLa+Jvh/Z+NtGInNtCJS68+ZbPzn6qefxaue8H+NfHvhPy9P1/wAO61f6Uny4ktpPOgX/AGWI+Yf7J/AivYtDHh3VvCkkejxL/Zt15gkg2NHsL/fUo33Dycrjqfevfw9OlXhOnDRPo+j7ryPjMbiMRhK1KvVtJwduZbSj2fZ/10uec+NNE1HWvDvgbwPpgAleBZ5mYfLEiRKpdvYFz9Tgd66rVdQ0L4TfDdIbOFWdfktomPz3MxHLOf1Y9hgDtXZRWdtA6PHEgkWJYRIRltg6Ln0715P4r+Gnizxp4tm1bWNYsNO0+PMVrCC0pjiB6nou49Tz/KuitRnRUp0leb0XkrHDhsTTxThRxM+WlG7f95t36fd5L1PC7i5mu72a7uH3zTSNK7erMck/majya9J8R+A/A3hzw7dyP47F3qscZaG2iEbeY/ZSqkkZ9SRivMixr5evRnSlae/rc/Q8JiqeJhzUr2XdNfdcjyK6Ky8eeM9OtI7Wy8TalFDEoVI/M3BQOgGQeK5vNbvhC98N2HiqK78VWE99p8aMfIiAO5/4dwJGV68Z9KzoykpJRly36m2KpwdNucOe3Syf3XPQfB+o/GXxayyafrt1DY5w19dRoI/+A/Llz9PzFev+H9VgjsZ7W58Qyay1mdt3qciIkSyHH7sFQBkZ6DOMjJyQK8lk8Y+J/il4jj8KeF430TRsfvmi++sI4JcjgDsEXqSBk1ozavYXXxI8N/DPwqAmi6ZdLJdMhz58kWXIJHUArknux9hX0OGrqmuaMnLW123q/Jdu7PiMwwcq75ZwjBpOTUUvdiuspdW9klp1Z7VN5ht5FiAMm0hQSQM9skcj6ivENa1jwDJ4gm0zx/oXiSxvUPzCW/muYcdmXD8qexC1q6B44iPxn8TeD9Wl3WN9eOlqWbAWQKEaPPYMBx/tD3qp4p/sy61I+BviFMYZAN+i+JCvJQnAWY+oPyt2OMnBINb4muq0OaFtG1rqr9n2v0e3c5MBg5YWtyVb6xUrxbUrPqu9uq36rqYHiTw78Hz4OutR8N+JBBeRruhhM7SGRuyGNhuGfXtXk+eK0Nf0W98OeI7rRtQMRnt2ALRNuVwQCrA+hBBrNzXzeJq88vgUWtND73AYf2VP+K5p6pvXT1G5NGTTM0ZrkPSsdfofj2/8OeBb/QdHtIra7vpd0upqx80JjGwDHB64OeMnjPNbfwTutJs/iY13q19BaCOzk8lp3CKWJXPzHjO3ca81zR1GDzXTSxU4ThJ68uyODEZdTq0qtOPuupu+v9eRra9f/bPGWp6lBKf3t7LPHIhweZCVYH8jW94w+Id/4z8PaTp+pWMK3FjkvdqxJnJXaTtx8ucAnk81xeT60VCrzSkk9JbmzwdJuEpK7hs+2lh5JJySSfejJpmaKxOmx//Z" alt="Claude">Claude</span>
+            <span class="platform-badge"><img src="data:image/png;base64,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" alt="Perplexity">Perplexity</span>
+          </div>
+          <button class="btn btn-primary btn-primary-lg" onclick="openPopup()">Start Your Campaign</button>
+        </div>
+        <div class="product-hero-image">
+          <div class="image-placeholder" id="sai-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Image coming soon</span>
+          </div>
+          <img id="sai-img" data-cms-img="sai-img" src="" alt="Search AI" style="display:none">
+        </div>
+      </div>
+    </div>
+    <div class="product-content">
+      <div class="product-content-inner">
+        <h2 class="section-headline" data-cms="sai-content-h">Search has evolved. Customers now ask AI for answers.</h2>
+        <div class="quote-block">
+          <p data-cms="sai-quote">"50% of consumers use AI-powered search to make buying decisions."</p>
+          <div class="quote-source"><span class="mckinsey-badge">McKinsey & Company</span></div>
+        </div>
+        <div class="product-feature-grid">
+          <div class="product-feature-card">
+            <h3>AI Answer Engine Tracking</h3>
+            <p>We continuously monitor where and how your business appears across all major AI answer engines, identifying gaps and opportunities.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Visibility Optimisation</h3>
+            <p>Our AI agents optimise your content and data so your business appears as the authoritative answer for your target queries.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Multi-Platform Coverage</h3>
+            <p>From Gemini to ChatGPT, Claude to Perplexity — we ensure consistent, accurate brand presence across every AI platform.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Competitive Intelligence</h3>
+            <p>Understand how your competitors appear in AI search and develop strategies to outperform them across all platforms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-cta-band">
+      <div style="max-width:600px;margin:0 auto">
+        <h2>Get Found on AI Search Today</h2>
+        <p>Book a free AI health check and see exactly where your business stands.</p>
+        <button class="btn btn-green btn-primary-lg" onclick="openPopup()">Free AI Health Check</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LISTINGS AI -->
+  <div class="product-content-wrapper" id="prod-listings-ai" style="display:none">
+    <div class="product-hero">
+      <div class="product-hero-inner">
+        <div>
+          <div class="product-hero-badge">Listings AI</div>
+          <h1 data-cms="lai-h1">AI Agents that place you on the map.</h1>
+          <p class="product-hero-sub" data-cms="lai-sub">Listings AI agents ensure accurate, up to date listings are visible and optimised everywhere customers search.</p>
+          <div class="platform-logos">
+            <span class="platform-badge"><svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C16.27 4 10 10.27 10 18c0 10.5 14 26 14 26s14-15.5 14-26c0-7.73-6.27-14-14-14z" fill="#ea4335"/><circle cx="24" cy="18" r="5" fill="white"/></svg>Google Maps</span>
+            <span class="platform-badge"><svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M43.6 24.5c0-1.5-.1-3-.4-4.5H24v8.5h11C34.4 32 32 34.5 29 36v5h7C40.6 37 43.6 31.3 43.6 24.5z" fill="#4285f4"/><path d="M24 44c5.8 0 10.7-1.9 14.3-5.1l-7-5.4C29.5 35 26.9 36 24 36c-5.6 0-10.3-3.8-12-8.9H4.7v5.6C8.3 39.8 15.6 44 24 44z" fill="#34a853"/><path d="M12 27.1A12.1 12.1 0 0112 21v-5.6H4.7A20 20 0 004 24c0 3.3.8 6.4 2.2 9.2l5.8-4.5 0-.6z" fill="#fbbc05"/><path d="M24 11.9c3.2 0 6 1.1 8.3 3.2l6.1-6.1C34.7 5.5 29.7 3.9 24 3.9 15.6 3.9 8.3 8.2 4.7 14.8l7.3 5.6C13.7 15.7 18.4 11.9 24 11.9z" fill="#ea4335"/></svg>Google</span>
+            <span class="platform-badge"><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2021 (64 Bit) -->
+<svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="297mm" height="210mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 29700 21000"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:url(#id0)}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="9438.21" y1="2509.42" x2="9012.51" y2="23085.06">
+   <stop offset="0" style="stop-opacity:1; stop-color:#26B8F4"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:#1B48EF"/>
+  </linearGradient>
+ </defs>
+ <g id="Camada_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <polygon class="fil0" points="8475.16,1399.66 12124.09,2685.03 12136.1,15485.22 17223.25,12520.22 14741.02,11358.99 13148.22,7402.88 21223.77,10231.3 21217.16,14376.26 12123.05,19614.59 8487.02,17591.25 "/>
+ </g>
+</svg>Bing</span>
+            <span class="platform-badge"><svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="6" fill="#FFD200"/><text x="24" y="31" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="17" fill="#1a1a1a">yell</text></svg>Yell</span>
+            <span class="platform-badge"><img src="data:image/png;base64,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" alt="LinkedIn">LinkedIn</span>
+            <span class="platform-badge"><img src="data:image/png;base64,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" alt="Facebook">Facebook</span>
+            <span class="platform-badge"><svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="ig1" cx="30%" cy="100%" r="130%"><stop offset="0%" stop-color="#fdf497"/><stop offset="10%" stop-color="#fdf497"/><stop offset="30%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="48" height="48" rx="10" fill="url(#ig1)"/><rect x="11" y="11" width="26" height="26" rx="7" fill="none" stroke="white" stroke-width="3"/><circle cx="24" cy="24" r="7" fill="none" stroke="white" stroke-width="3"/><circle cx="33" cy="15" r="2" fill="white"/></svg>Instagram</span>
+          </div>
+          <button class="btn btn-primary btn-primary-lg" onclick="openPopup()">Get A Quote</button>
+        </div>
+        <div class="product-hero-image">
+          <div class="image-placeholder" id="lai-img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Image coming soon</span>
+          </div>
+          <img id="lai-img" data-cms-img="lai-img" src="" alt="Listings AI" style="display:none">
+        </div>
+      </div>
+    </div>
+    <div class="product-content">
+      <div class="product-content-inner">
+        <h2 class="section-headline">Build your online presence with AI agents that boost SEO and GEO.</h2>
+        <div class="product-feature-grid" style="margin-top:32px">
+          <div class="product-feature-card">
+            <h3>AI Profile Scanning</h3>
+            <p>AI scans your profiles and competitor content across Google, Apple, Facebook, Yelp, and more — spotting gaps, errors, and missed opportunities.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Data-Driven Updates</h3>
+            <p>AI eliminates guesswork and tells us exactly which updates will improve search rankings, traffic, and customer results.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Always Accurate</h3>
+            <p>AI updates your listings so they're always accurate, consistent, and aligned with your brand standards across every platform.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Growth Intelligence</h3>
+            <p>Monitor listing performance, track visibility trends, and receive actionable insights to continually improve your local presence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-cta-band">
+      <div style="max-width:600px;margin:0 auto">
+        <h2>Put Your Business on the Map</h2>
+        <p>Start with a free listing audit and discover where you're missing out.</p>
+        <button class="btn btn-green btn-primary-lg" onclick="openPopup()">Free Listings Audit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL MEDIA AI -->
+  <div class="product-content-wrapper" id="prod-social-ai" style="display:none">
+    <div class="product-hero">
+      <div class="product-hero-inner">
+        <div>
+          <div class="product-hero-badge">Social Media AI</div>
+          <h1 data-cms="soci-h1">The future of social media marketing.</h1>
+          <p class="product-hero-sub" data-cms="soci-sub">AI Agents craft, schedule, publish, and optimise brand aligned content to grow reach and drive traffic to your business.</p>
+          <div class="platform-logos">
+            <span class="platform-badge"><img src="data:image/png;base64,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" alt="LinkedIn">LinkedIn</span>
+            <span class="platform-badge"><img src="data:image/png;base64,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" alt="Facebook">Facebook</span>
+            <span class="platform-badge"><svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="ig2" cx="30%" cy="100%" r="130%"><stop offset="0%" stop-color="#fdf497"/><stop offset="10%" stop-color="#fdf497"/><stop offset="30%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="48" height="48" rx="10" fill="url(#ig2)"/><rect x="11" y="11" width="26" height="26" rx="7" fill="none" stroke="white" stroke-width="3"/><circle cx="24" cy="24" r="7" fill="none" stroke="white" stroke-width="3"/><circle cx="33" cy="15" r="2" fill="white"/></svg>Instagram</span>
+          </div>
+          <button class="btn btn-primary btn-primary-lg" onclick="openPopup()">Start Your Campaign</button>
+        </div>
+        <div class="product-hero-image">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Image coming soon</span>
+          </div>
+          <img data-cms-img="soci-img" src="" alt="Social Media AI" style="display:none">
+        </div>
+      </div>
+    </div>
+    <div class="product-content">
+      <div class="product-content-inner">
+        <h2 class="section-headline">AI Agents Drive High-Impact Social Media Management</h2>
+        <div class="product-feature-grid" style="margin-top:32px">
+          <div class="product-feature-card">
+            <h3>Smarter Social Planning</h3>
+            <p>AI analyses top posts, competitor content, and trending topics to inspire fresh social content, authored and scheduled for peak engagement.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Autonomous Execution</h3>
+            <p>We stay in control while AI agents handle the heavy lifting to deliver real social outcomes — configured to adapt to your needs and your brand.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Human Quality Control</h3>
+            <p>Our account managers double check everything. AI speed with human intelligence — the best of both worlds for your brand.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Multichannel Publishing</h3>
+            <p>We scale your social presence rapidly by publishing and managing content across multiple channels and social media platforms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-cta-band">
+      <div style="max-width:600px;margin:0 auto">
+        <h2 style="white-space:nowrap">Transform Your Social Media Presence</h2>
+        <p>Let AI agents take your social media to the next level.</p>
+        <button class="btn btn-green btn-primary-lg" onclick="openPopup()">Get Started</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKETING AUTOMATION -->
+  <div class="product-content-wrapper" id="prod-marketing-auto" style="display:none">
+    <div class="product-hero">
+      <div class="product-hero-inner">
+        <div>
+          <div class="product-hero-badge">Marketing Automation</div>
+          <h1 data-cms="mka-h1">AI Agents and Chatbots keep your customer list informed.</h1>
+          <p class="product-hero-sub" data-cms="mka-sub">AI agents build and run digital campaigns and newsletters for every customer in your network.</p>
+          <button class="btn btn-primary btn-primary-lg" onclick="openPopup()">Get A Quote</button>
+        </div>
+        <div class="product-hero-image">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Image coming soon</span>
+          </div>
+          <img data-cms-img="mka-img" src="" alt="Marketing Automation" style="display:none">
+        </div>
+      </div>
+    </div>
+    <div class="product-content">
+      <div class="product-content-inner">
+        <h2 class="section-headline">AI isn't about replacing people. It's about removing friction.</h2>
+        <p class="section-sub" style="margin-top:16px">Businesses lose revenue every day from missed calls, delayed replies, no-shows, and inconsistent follow-up. Staff get overwhelmed. Leads go cold. Customers are left waiting.</p>
+        <div class="product-feature-grid" style="margin-top:32px">
+          <div class="product-feature-card">
+            <h3>Email Campaigns</h3>
+            <p>Automated, personalised email sequences that nurture leads and keep customers engaged — sent at exactly the right time.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>SMS Automation</h3>
+            <p>Timely SMS messages for reminders, follow-ups, and promotions that reach customers where they are.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>AI Chatbots</h3>
+            <p>24/7 intelligent chatbots that handle enquiries, qualify leads, and book appointments without human intervention.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Workflow Automation</h3>
+            <p>Intelligent automation systems that handle communication and routine workflows automatically across phone, SMS, email, calendars, and booking systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-cta-band">
+      <div style="max-width:600px;margin:0 auto">
+        <h2>Remove Friction, Grow Revenue</h2>
+        <p>Book a call and discover how automation can transform your business.</p>
+        <button class="btn btn-green btn-primary-lg" onclick="openPopup()">Let's Talk</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVIEWS AI -->
+  <div class="product-content-wrapper" id="prod-reviews-ai" style="display:none">
+    <div class="product-hero">
+      <div class="product-hero-inner">
+        <div>
+          <div class="product-hero-badge">Reviews AI</div>
+          <h1 data-cms="rev-h1">AI Agents that turn your reputation into revenue.</h1>
+          <p class="product-hero-sub" data-cms="rev-sub">Reviews agents automatically request, respond to, and market customer reviews to enhance your brand reputation.</p>
+          <div class="platform-logos">
+            <span class="platform-badge"><svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C16.27 4 10 10.27 10 18c0 10.5 14 26 14 26s14-15.5 14-26c0-7.73-6.27-14-14-14z" fill="#ea4335"/><circle cx="24" cy="18" r="5" fill="white"/></svg>Google Maps</span>
+            <span class="platform-badge"><img src="data:image/png;base64,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" alt="LinkedIn">LinkedIn</span>
+            <span class="platform-badge"><img src="data:image/png;base64,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" alt="Facebook">Facebook</span>
+          </div>
+          <button class="btn btn-primary btn-primary-lg" onclick="openPopup()">Get A Quote</button>
+        </div>
+        <div class="product-hero-image">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Image coming soon</span>
+          </div>
+          <img data-cms-img="rev-img" src="" alt="Reviews AI" style="display:none">
+        </div>
+      </div>
+    </div>
+    <div class="product-content">
+      <div class="product-content-inner">
+        <h2 class="section-headline">Generate reviews where they are needed most.</h2>
+        <p class="section-sub" style="margin-top:16px">AI identifies happy customers, picks the best platform and message, and sends review requests at the perfect time.</p>
+        <div class="product-feature-grid" style="margin-top:32px">
+          <div class="product-feature-card">
+            <h3>Smart Review Requests</h3>
+            <p>AI identifies your happiest customers and automatically reaches out with personalised review requests at the optimal moment.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>AI-Powered Responses</h3>
+            <p>Every review gets a thoughtful, brand-consistent response — automatically drafted and deployed to show customers you care.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Reputation Marketing</h3>
+            <p>Positive reviews are turned into powerful marketing assets, amplified across your channels to build trust with new customers.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>SEO Reputation Boost</h3>
+            <p>By generating reviews on high-visibility platforms, we improve your brand's search engine results and enhance your online reputation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-cta-band">
+      <div style="max-width:600px;margin:0 auto">
+        <h2 style="white-space:nowrap">Turn Your Reputation into Revenue</h2>
+        <p>See how Reviews AI can transform your online reputation in 30 days.</p>
+        <button class="btn btn-green btn-primary-lg" onclick="openPopup()">Get Started</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEB DESIGN -->
+  <div class="product-content-wrapper" id="prod-web-design" style="display:none">
+    <div class="product-hero">
+      <div class="product-hero-inner">
+        <div>
+          <div class="product-hero-badge">Web Design</div>
+          <h1 data-cms="wd-h1">AI coded websites that look beautiful and convert.</h1>
+          <p class="product-hero-sub" data-cms="wd-sub">AI Agents build customised web sites that build trust, attract customers, and stand out in a competitive digital landscape.</p>
+          <div class="platform-logos">
+            <span class="platform-badge"><img src="data:image/jpeg;base64,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" alt="Claude">Claude</span>
+            <span class="platform-badge"><img src="data:image/png;base64,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" alt="Replit">Replit</span>
+            <span class="platform-badge"><img src="data:image/png;base64,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" alt="Bolt">Bolt</span>
+          </div>
+          <button class="btn btn-primary btn-primary-lg" onclick="openPopup()">Get A Quote</button>
+        </div>
+        <div class="product-hero-image">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Image coming soon</span>
+          </div>
+          <img data-cms-img="wd-img" src="" alt="Web Design" style="display:none">
+        </div>
+      </div>
+    </div>
+    <div class="product-content">
+      <div class="product-content-inner">
+        <h2 class="section-headline">Your website is your first impression. Make it count.</h2>
+        <p class="section-sub" style="margin-top:16px">We combine creative design with marketing strategy — every website we build is designed to convert visitors, rank well on search engines, and reflect the unique personality of your business.</p>
+        <div class="product-feature-grid" style="margin-top:32px">
+          <div class="product-feature-card">
+            <h3>Conversion-First Design</h3>
+            <p>Every page, layout, and call-to-action is crafted to turn visitors into customers. Beautiful and functional by design.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>SEO Built-In</h3>
+            <p>We build in SEO from the ground up — technical structure, content, and metadata all optimised to rank well from day one.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>AI Customisation</h3>
+            <p>AI helps us move faster, personalise deeper, and produce higher quality work than traditional web development approaches.</p>
+          </div>
+          <div class="product-feature-card">
+            <h3>Strategy-Led</h3>
+            <p>We listen to your goals, create a layout that fits your audience, and deliver a website that looks professional and performs effectively.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="product-cta-band">
+      <div style="max-width:600px;margin:0 auto">
+        <h2 style="white-space:nowrap">Build a Website That Works for You</h2>
+        <p>Get a free consultation and see what AI-powered web design can do for your business.</p>
+        <button class="btn btn-green btn-primary-lg" onclick="openPopup()">Get A Quote</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /product page -->
+
+<!-- ═══════════════════════════════════════════════════════
+     CONTACT PAGE
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-contact">
+  <section style="background:var(--off-white); padding:60px 5% 80px;">
+    <div style="max-width:1000px; margin:0 auto">
+      <span class="section-label">Get In Touch</span>
+      <h1 class="section-headline" style="margin-bottom:8px" data-cms="contact-h1">Let's talk about your business.</h1>
+      <p class="section-sub" data-cms="contact-sub">We'd love to hear from you. Choose a way to reach us below or fill in the form to get started.</p>
+
+      <div class="contact-inner" style="margin-top:48px">
+        <div>
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.11 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.45-.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Telephone</div>
+              <div class="contact-info-value" data-cms="contact-phone">02393 190 121</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Email</div>
+              <div class="contact-info-value" data-cms="contact-email">projects@dotbusiness.co.uk</div>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Address</div>
+              <div class="contact-info-value" data-cms="contact-address">Suite 8, 95 Elm Grove, Portsmouth, PO5 1LH</div>
+            </div>
+          </div>
+        </div>
+        <div style="background:white; border-radius:var(--radius-lg); padding:32px; border:1px solid var(--mid-grey)">
+          <h3 style="font-family:var(--font-main); font-size:1.1rem; font-weight:700; margin-bottom:20px; color:var(--text)">Send us a message</h3>
+          <div class="form-row" style="margin-bottom:12px">
+            <div class="form-field">
+              <label>First Name *</label>
+              <input type="text" id="ct-first" placeholder="Jane">
+            </div>
+            <div class="form-field">
+              <label>Last Name</label>
+              <input type="text" id="ct-last" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-field" style="margin-bottom:12px">
+            <label>Email Address *</label>
+            <input type="email" id="ct-email" placeholder="jane@business.co.uk">
+          </div>
+          <div class="form-field" style="margin-bottom:20px">
+            <label>Message</label>
+            <textarea class="cms-input cms-textarea" id="ct-msg" placeholder="How can we help?"></textarea>
+          </div>
+          <button class="btn btn-primary" style="width:100%; justify-content:center; padding:13px;" onclick="submitContactForm()">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER (shared)
+═══════════════════════════════════════════════════════ -->
+<footer id="main-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-mark"></div>
+          <span class="logo-text">Dot<span>Business</span></span>
+        </div>
+        <p class="footer-tagline" data-cms="footer-tagline">Agentic Marketing and AI Automation for Business. Where AI agents enhance your online visibility, build your brand, and accelerate growth.</p>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.11 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.45-.45a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          <span data-cms="footer-phone">02393 190 121</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span data-cms="footer-email">projects@dotbusiness.co.uk</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-cms="footer-address">Suite 8, 95 Elm Grove, Portsmouth, PO5 1LH</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Solutions</div>
+        <ul class="footer-links">
+          <li><button onclick="showProductPage('search-ai')">Search AI</button></li>
+          <li><button onclick="showProductPage('reviews-ai')">Reviews AI</button></li>
+          <li><button onclick="showProductPage('social-ai')">Social Media AI</button></li>
+          <li><button onclick="showProductPage('listings-ai')">Listings AI</button></li>
+          <li><button onclick="showProductPage('marketing-auto')">Marketing Automation</button></li>
+          <li><button onclick="showProductPage('web-design')">Web Design</button></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
+          <li><button onclick="showPage('home')">Home</button></li>
+          <li><button onclick="showPage('contact')">Contact Us</button></li>
+          <li><button onclick="openPopup()">Get Started</button></li>
+          <li><button onclick="openPopup()">Free AI Health Check</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy" data-cms="footer-copy">© 2025 Dot Business. All rights reserved. Suite 8, 95 Elm Grove, Portsmouth, PO5 1LH</span>
+      <button class="btn btn-footer-cta" onclick="openPopup()">Get In Touch</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     LEAD GEN POPUP
+═══════════════════════════════════════════════════════ -->
+<div class="popup-overlay" id="leadPopup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">×</button>
+
+    <div id="popup-form-view">
+      <h2 data-cms="popup-heading">Let's Find Out How We Can Help</h2>
+      <p data-cms="popup-intro">Tell us a little about what you need — we'll be in touch to arrange a free, no-obligation conversation.</p>
+
+      <div class="popup-intent" data-cms="popup-intent-q">What best describes what you want help with right now?</div>
+      <div class="intent-options">
+        <label class="intent-option"><input type="radio" name="intent" value="Free AI health check"> I'd like a free AI health check for my business</label>
+        <label class="intent-option"><input type="radio" name="intent" value="Grow with AI"> I'm interested in harnessing AI to grow my business</label>
+        <label class="intent-option"><input type="radio" name="intent" value="Rank higher on Google"> I want to rank higher on Google</label>
+        <label class="intent-option"><input type="radio" name="intent" value="Automated social media"> I'd like automated social media content</label>
+        <label class="intent-option"><input type="radio" name="intent" value="More customers/leads"> I want more customers, leads, or sales</label>
+        <label class="intent-option"><input type="radio" name="intent" value="New website"> I need a new website</label>
+        <label class="intent-option"><input type="radio" name="intent" value="General digital marketing"> I'm not sure — I need help with my digital marketing</label>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label>First Name *</label>
+          <input type="text" id="f-first" placeholder="Jane" required>
+        </div>
+        <div class="form-field">
+          <label>Last Name</label>
+          <input type="text" id="f-last" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-fields-single">
+        <div class="form-field">
+          <label>Email Address *</label>
+          <input type="email" id="f-email" placeholder="jane@business.co.uk" required>
+        </div>
+        <div class="form-field">
+          <label>Phone Number *</label>
+          <input type="tel" id="f-phone" placeholder="07700 900000" required>
+        </div>
+        <div class="form-field">
+          <label>Business Name</label>
+          <input type="text" id="f-biz" placeholder="Your Business Ltd">
+        </div>
+      </div>
+
+      <div id="popup-error" style="color:#c62828;font-size:0.82rem;margin-top:12px;display:none"></div>
+      <button class="btn btn-primary popup-submit" onclick="submitLead()">
+        <span id="popup-btn-text">Send My Enquiry →</span>
+      </button>
+      <p class="popup-note" data-cms="popup-note">We'll call you back — no spam, ever.</p>
+    </div>
+
+    <div id="popup-success-view" style="display:none">
+      <div class="popup-success">
+        <div class="success-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00c48c" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Thanks — we'll be in touch!</h3>
+        <p>We've received your enquiry and one of the team will call you back shortly. No spam, ever.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     AI CHAT WIDGET PLACEHOLDER
+═══════════════════════════════════════════════════════ -->
+<div id="ai-chat-widget" style="display:none">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-avatar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      </div>
+      <div class="chat-header-text">
+        <h4>Dot Business AI</h4>
+        <p>Ask us anything</p>
+      </div>
+    </div>
+    <div class="chat-body">
+      <div class="chat-placeholder">
+        <!-- AI Chat agent will be installed here -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--mid-grey)" stroke-width="1.5" style="margin-bottom:8px"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <p>AI assistant coming soon</p>
+      </div>
+    </div>
+  </div>
+  <button class="chat-trigger" onclick="toggleChat()" title="Chat with us">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  </button>
+</div>
+
+<!-- Save toast -->
+<div class="save-toast" id="saveToast">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+  Changes saved
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ADMIN PANEL
+═══════════════════════════════════════════════════════ -->
+<div id="adminWrap" style="display:none">
+
+  <!-- LOGIN -->
+  <div class="admin-login" id="adminLogin">
+    <div class="admin-login-box">
+      <div class="logo" style="margin-bottom:24px">
+        <div class="logo-mark"></div>
+        <span class="logo-text">Dot<span>Business</span></span>
+      </div>
+      <h1>Admin Panel</h1>
+      <p>Sign in to manage your website content.</p>
+      <div class="admin-error" id="loginError">Incorrect username or password.</div>
+      <div class="cms-field">
+        <label class="cms-label">Username</label>
+        <input class="cms-input" type="text" id="loginUser" placeholder="admin" autocomplete="username">
+      </div>
+      <div class="cms-field" style="margin-bottom:24px">
+        <label class="cms-label">Password</label>
+        <input class="cms-input" type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()">
+      </div>
+      <button class="admin-save-all" style="width:100%" onclick="doLogin()">Sign In</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="admin-panel" id="adminPanel">
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-logo">
+        <div class="logo" style="display:flex;align-items:center">
+          <img src="data:image/png;base64,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" alt="Dot Business" style="height:36px;width:auto;display:block">
+        </div>
+      </div>
+      <nav class="admin-nav">
+        <div class="admin-nav-section">Content</div>
+        <button class="admin-nav-btn active" onclick="switchAdmin('home')" id="nav-home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Home Page
+        </button>
+        <button class="admin-nav-btn" onclick="switchAdmin('products')" id="nav-products">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Product Pages
+        </button>
+        <button class="admin-nav-btn" onclick="switchAdmin('images')" id="nav-images">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>Images
+        </button>
+        <button class="admin-nav-btn" onclick="switchAdmin('popup')" id="nav-popup">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Lead Gen Popup
+        </button>
+        <div class="admin-nav-section">System</div>
+        <button class="admin-nav-btn" onclick="switchAdmin('settings')" id="nav-settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>Settings
+        </button>
+        <button class="admin-nav-btn" onclick="switchAdmin('leads')" id="nav-leads">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>Leads
+        </button>
+      </nav>
+      <button class="admin-logout-btn" onclick="doLogout()">Sign Out</button>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <h1 id="adminSectionTitle">Home Page</h1>
+        <button class="admin-save-all" onclick="saveAllCMS()">Save Changes</button>
+      </div>
+
+      <!-- HOME CMS -->
+      <div class="admin-section active" id="as-home">
+        <div class="cms-card">
+          <div class="cms-card-title">Hero Section</div>
+          <div class="cms-field">
+            <label class="cms-label">Hero Heading</label>
+            <input class="cms-input" data-bind="hero-heading" placeholder="Agentic Marketing and AI Automation for Business">
+          </div>
+          <div class="cms-field">
+            <label class="cms-label">Hero Subheading</label>
+            <input class="cms-input" data-bind="hero-sub" placeholder="Where AI agents enhance...">
+          </div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Products Section</div>
+          <div class="cms-field">
+            <label class="cms-label">Section Headline</label>
+            <input class="cms-input" data-bind="products-headline">
+          </div>
+          <div class="cms-field">
+            <label class="cms-label">Section Subheading</label>
+            <input class="cms-input" data-bind="products-sub">
+          </div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">CTA Band — AI Shift</div>
+          <div class="cms-field">
+            <label class="cms-label">Heading</label>
+            <input class="cms-input" data-bind="cta1-heading">
+          </div>
+          <div class="cms-field">
+            <label class="cms-label">Sub Text</label>
+            <textarea class="cms-input cms-textarea" data-bind="cta1-sub"></textarea>
+          </div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Features Section</div>
+          <div class="cms-field">
+            <label class="cms-label">Heading</label>
+            <textarea class="cms-input cms-textarea" data-bind="feat-heading"></textarea>
+          </div>
+          <div class="cms-field">
+            <label class="cms-label">Sub Text</label>
+            <textarea class="cms-input cms-textarea" data-bind="feat-sub"></textarea>
+          </div>
+          <div class="cms-field"><label class="cms-label">Bullet 1</label><input class="cms-input" data-bind="feat1"></div>
+          <div class="cms-field"><label class="cms-label">Bullet 2</label><input class="cms-input" data-bind="feat2"></div>
+          <div class="cms-field"><label class="cms-label">Bullet 3</label><input class="cms-input" data-bind="feat3"></div>
+          <div class="cms-field"><label class="cms-label">Bullet 4</label><input class="cms-input" data-bind="feat4"></div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Footer</div>
+          <div class="cms-field"><label class="cms-label">Tagline</label><textarea class="cms-input cms-textarea" data-bind="footer-tagline"></textarea></div>
+          <div class="cms-field"><label class="cms-label">Phone</label><input class="cms-input" data-bind="footer-phone"></div>
+          <div class="cms-field"><label class="cms-label">Email</label><input class="cms-input" data-bind="footer-email"></div>
+          <div class="cms-field"><label class="cms-label">Address</label><input class="cms-input" data-bind="footer-address"></div>
+          <div class="cms-field"><label class="cms-label">Copyright Text</label><input class="cms-input" data-bind="footer-copy"></div>
+        </div>
+      </div>
+
+      <!-- PRODUCTS CMS -->
+      <div class="admin-section" id="as-products">
+        <div class="cms-card">
+          <div class="cms-card-title">Product Card Names & Descriptions (Home Page Grid)</div>
+          <div class="cms-field"><label class="cms-label">Search AI — Name</label><input class="cms-input" data-bind="p1-name"></div>
+          <div class="cms-field"><label class="cms-label">Search AI — Description</label><textarea class="cms-input cms-textarea" data-bind="p1-desc"></textarea></div>
+          <div class="cms-field"><label class="cms-label">Reviews AI — Name</label><input class="cms-input" data-bind="p2-name"></div>
+          <div class="cms-field"><label class="cms-label">Reviews AI — Description</label><textarea class="cms-input cms-textarea" data-bind="p2-desc"></textarea></div>
+          <div class="cms-field"><label class="cms-label">Social Media AI — Name</label><input class="cms-input" data-bind="p3-name"></div>
+          <div class="cms-field"><label class="cms-label">Social Media AI — Description</label><textarea class="cms-input cms-textarea" data-bind="p3-desc"></textarea></div>
+          <div class="cms-field"><label class="cms-label">Listings AI — Name</label><input class="cms-input" data-bind="p4-name"></div>
+          <div class="cms-field"><label class="cms-label">Listings AI — Description</label><textarea class="cms-input cms-textarea" data-bind="p4-desc"></textarea></div>
+          <div class="cms-field"><label class="cms-label">Marketing Automation — Name</label><input class="cms-input" data-bind="p5-name"></div>
+          <div class="cms-field"><label class="cms-label">Marketing Automation — Description</label><textarea class="cms-input cms-textarea" data-bind="p5-desc"></textarea></div>
+          <div class="cms-field"><label class="cms-label">Web Design — Name</label><input class="cms-input" data-bind="p6-name"></div>
+          <div class="cms-field"><label class="cms-label">Web Design — Description</label><textarea class="cms-input cms-textarea" data-bind="p6-desc"></textarea></div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Search AI — Product Page</div>
+          <div class="cms-field"><label class="cms-label">Page Heading</label><textarea class="cms-input cms-textarea" data-bind="sai-h1"></textarea></div>
+          <div class="cms-field"><label class="cms-label">Subheading</label><input class="cms-input" data-bind="sai-sub"></div>
+          <div class="cms-field"><label class="cms-label">Quote</label><input class="cms-input" data-bind="sai-quote"></div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Listings AI — Product Page</div>
+          <div class="cms-field"><label class="cms-label">Page Heading</label><input class="cms-input" data-bind="lai-h1"></div>
+          <div class="cms-field"><label class="cms-label">Subheading</label><textarea class="cms-input cms-textarea" data-bind="lai-sub"></textarea></div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Social Media AI — Product Page</div>
+          <div class="cms-field"><label class="cms-label">Page Heading</label><input class="cms-input" data-bind="soci-h1"></div>
+          <div class="cms-field"><label class="cms-label">Subheading</label><textarea class="cms-input cms-textarea" data-bind="soci-sub"></textarea></div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Marketing Automation — Product Page</div>
+          <div class="cms-field"><label class="cms-label">Page Heading</label><input class="cms-input" data-bind="mka-h1"></div>
+          <div class="cms-field"><label class="cms-label">Subheading</label><input class="cms-input" data-bind="mka-sub"></div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Reviews AI — Product Page</div>
+          <div class="cms-field"><label class="cms-label">Page Heading</label><input class="cms-input" data-bind="rev-h1"></div>
+          <div class="cms-field"><label class="cms-label">Subheading</label><textarea class="cms-input cms-textarea" data-bind="rev-sub"></textarea></div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Web Design — Product Page</div>
+          <div class="cms-field"><label class="cms-label">Page Heading</label><input class="cms-input" data-bind="wd-h1"></div>
+          <div class="cms-field"><label class="cms-label">Subheading</label><textarea class="cms-input cms-textarea" data-bind="wd-sub"></textarea></div>
+        </div>
+      </div>
+
+      <!-- IMAGES CMS -->
+      <div class="admin-section" id="as-images">
+        <div class="cms-card">
+          <div class="cms-card-title">Product Page Images (hosted on imgbb.com)</div>
+          <p style="font-size:0.85rem; color:var(--dark-grey); margin-bottom:20px">Paste the direct image URL from imgbb.com for each product page. Leave blank to show placeholder.</p>
+
+          <div class="cms-field">
+            <label class="cms-label">Search AI — Image URL</label>
+            <input class="cms-input" id="img-sai" placeholder="https://i.ibb.co/your-image.jpg">
+          </div>
+          <div class="cms-field">
+            <label class="cms-label">Listings AI — Image URL</label>
+            <input class="cms-input" id="img-lai" placeholder="https://i.ibb.co/your-image.jpg">
+          </div>
+          <div class="cms-field">
+            <label class="cms-label">Social Media AI — Image URL</label>
+            <input class="cms-input" id="img-soci" placeholder="https://i.ibb.co/your-image.jpg">
+          </div>
+          <div class="cms-field">
+            <label class="cms-label">Marketing Automation — Image URL</label>
+            <input class="cms-input" id="img-mka" placeholder="https://i.ibb.co/your-image.jpg">
+          </div>
+          <div class="cms-field">
+            <label class="cms-label">Reviews AI — Image URL</label>
+            <input class="cms-input" id="img-rev" placeholder="https://i.ibb.co/your-image.jpg">
+          </div>
+          <div class="cms-field">
+            <label class="cms-label">Web Design — Image URL</label>
+            <input class="cms-input" id="img-wd" placeholder="https://i.ibb.co/your-image.jpg">
+          </div>
+          <button class="admin-save-all" onclick="saveImages()" style="margin-top:12px">Apply Images</button>
+        </div>
+      </div>
+
+      <!-- POPUP CMS -->
+      <div class="admin-section" id="as-popup">
+        <div class="cms-card">
+          <div class="cms-card-title">Lead Generation Popup</div>
+          <div class="cms-field"><label class="cms-label">Popup Heading</label><input class="cms-input" data-bind="popup-heading"></div>
+          <div class="cms-field"><label class="cms-label">Intro Text</label><textarea class="cms-input cms-textarea" data-bind="popup-intro"></textarea></div>
+          <div class="cms-field"><label class="cms-label">Intent Question Text</label><input class="cms-input" data-bind="popup-intent-q"></div>
+          <div class="cms-field"><label class="cms-label">Footer Note</label><input class="cms-input" data-bind="popup-note"></div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Email Notification</div>
+          <p style="font-size:0.85rem; color:var(--dark-grey); margin-bottom:16px">Lead enquiries are logged below in the Leads section. For email notification, configure a Formspree endpoint or similar service and enter the form action URL here.</p>
+          <div class="cms-field">
+            <label class="cms-label">Formspree / Email Endpoint URL</label>
+            <input class="cms-input" id="formEndpoint" placeholder="https://formspree.io/f/yourcode">
+          </div>
+          <button class="admin-save-all" onclick="saveFormEndpoint()" style="margin-top:8px">Save Endpoint</button>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="admin-section" id="as-settings">
+        <div class="settings-row">
+          <div class="cms-card">
+            <div class="cms-card-title">Google Site Verification</div>
+            <div class="cms-field">
+              <label class="cms-label">Verification Code</label>
+              <input class="cms-input" id="googleVerify" placeholder="xxxxxxxxxxxxxxxxxx">
+            </div>
+            <button class="admin-save-all" onclick="saveGoogleVerify()" style="margin-top:8px">Save</button>
+          </div>
+          <div class="cms-card">
+            <div class="cms-card-title">Google Analytics</div>
+            <div class="cms-field">
+              <label class="cms-label">Measurement ID</label>
+              <input class="cms-input" id="gaId" placeholder="G-XXXXXXXXXX">
+            </div>
+            <button class="admin-save-all" onclick="saveGA()" style="margin-top:8px">Save & Apply</button>
+          </div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Data Management</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap">
+            <button class="admin-save-all" onclick="exportData()">Export Backup</button>
+            <label class="admin-save-all" style="cursor:pointer">Import Backup <input type="file" accept=".json" onchange="importData(event)" style="display:none"></label>
+          </div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Change Password</div>
+          <div class="settings-row">
+            <div class="cms-field">
+              <label class="cms-label">New Password</label>
+              <input class="cms-input" type="password" id="newPass" placeholder="New password">
+            </div>
+            <div class="cms-field">
+              <label class="cms-label">Confirm Password</label>
+              <input class="cms-input" type="password" id="newPassConfirm" placeholder="Confirm">
+            </div>
+          </div>
+          <button class="admin-save-all" onclick="changePassword()" style="margin-top:8px">Update Password</button>
+          <div id="pwMsg" style="font-size:0.82rem; margin-top:8px; display:none"></div>
+        </div>
+        <div class="cms-card">
+          <div class="cms-card-title">Master Recovery Key</div>
+          <p style="font-size:0.85rem;color:var(--dark-grey);margin-bottom:12px">Store this key somewhere safe. It can be used to reset access to the admin panel.</p>
+          <div style="background:var(--light-grey); padding:12px 16px; border-radius:8px; font-family:monospace; font-size:0.85rem; color:var(--text); user-select:all" id="recoveryKeyDisplay">DOT-RECOVERY-2025-XKQP-7742</div>
+        </div>
+        <div class="cms-card danger-zone">
+          <div class="cms-card-title">Danger Zone</div>
+          <p style="font-size:0.85rem;color:var(--dark-grey);margin-bottom:16px">Reset all CMS content to original defaults. This cannot be undone.</p>
+          <button class="btn-danger" onclick="if(confirm('Reset all content to defaults? This cannot be undone.')) resetCMS()">Reset All Content</button>
+        </div>
+      </div>
+
+      <!-- LEADS -->
+      <div class="admin-section" id="as-leads">
+        <div class="cms-card">
+          <div class="cms-card-title">Lead Enquiries</div>
+          <p style="font-size:0.85rem;color:var(--dark-grey);margin-bottom:16px">Leads submitted through the website popup are stored here. Configure an email endpoint in the Popup settings to also receive email notifications.</p>
+          <div id="leads-list">
+            <p style="font-size:0.9rem;color:var(--grey);text-align:center;padding:32px 0">No leads yet. They'll appear here when someone submits the form.</p>
+          </div>
+          <div style="margin-top:16px;display:flex;gap:12px">
+            <button class="admin-save-all" onclick="exportLeads()">Export Leads (CSV)</button>
+            <button class="btn-danger" onclick="if(confirm('Clear all leads? This cannot be undone.'))clearLeads()">Clear All Leads</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// STATE & DEFAULTS
+// ═══════════════════════════════════════════════════════
+const DEFAULT_CONTENT = {
+  'hero-heading': 'Agentic Marketing and AI Automation for Business',
+  'hero-sub': 'Where AI agents enhance your online visibility, build your brand, and accelerate growth.',
+  'products-headline': 'Multi-location Marketing is hard. AI agents make it easy.',
+  'products-sub': 'Six specialist AI solutions, working together to grow your business.',
+  'cta1-heading': 'AI Is About To Affect Every Business — Are You Ready?',
+  'cta1-sub': 'If your business is invisible to AI you are missed in over a third of all customer searches. Next year it will be over half. We set you up with tools to guarantee your business is found by AI first.',
+  'feat-heading': "AI Isn't Going To Destroy Your Business, But If Your Competitors Use It Properly, They Might.",
+  'feat-sub': 'AI optimisation is going to cost some businesses thousands, and make others hundreds of thousands in profit. We make sure you come out on the right side of the equation.',
+  'feat1': 'Proven AI search & marketing frameworks',
+  'feat2': 'AI-driven decision support',
+  'feat3': 'Automation that removes friction from sales and service',
+  'feat4': 'Conversion-focused execution',
+  'footer-tagline': 'Agentic Marketing and AI Automation for Business. Where AI agents enhance your online visibility, build your brand, and accelerate growth.',
+  'footer-phone': '02393 190 121',
+  'footer-email': 'projects@dotbusiness.co.uk',
+  'footer-address': 'Suite 8, 95 Elm Grove, Portsmouth, PO5 1LH',
+  'footer-copy': '© 2025 Dot Business. All rights reserved. Suite 8, 95 Elm Grove, Portsmouth, PO5 1LH',
+  'p1-name': 'Search AI', 'p1-desc': 'AI Search is replacing traditional web search. Most businesses remain invisible to AI answer engines. Search AI delivers visibility across all AI platforms.',
+  'p2-name': 'Reviews AI', 'p2-desc': 'Reviews AI Agents turn reputation into revenue by automating review requests, responses, and marketing.',
+  'p3-name': 'Social Media AI', 'p3-desc': 'Social AI Agents author on brand material, publish at peak times, and ensure your business looks active and attractive online.',
+  'p4-name': 'Listings AI', 'p4-desc': 'Listings AI Agents optimise presence with uniform branding and information across platforms, boosting visibility and growth.',
+  'p5-name': 'Marketing Automation', 'p5-desc': 'Outreach on autopilot. Marketing Automation AI Agents run email, chatbot, and SMS campaigns personalised for your customers.',
+  'p6-name': 'Web Design', 'p6-desc': 'Beautiful websites that convert. AI customised web sites that build trust, attract customers, and stand out.',
+  'sai-h1': 'Be the Top Answer for Every Location on Gemini, ChatGPT, Claude, Perplexity.',
+  'sai-sub': 'AI agents track, ensure, and boost Answer Engine visibility.',
+  'sai-quote': '"50% of consumers use AI-powered search to make buying decisions."',
+  'lai-h1': 'AI Agents that place you on the map.',
+  'lai-sub': 'Listings AI agents ensure accurate, up to date listings are visible and optimised everywhere customers search.',
+  'soci-h1': 'The future of social media marketing.',
+  'soci-sub': 'AI Agents craft, schedule, publish, and optimise brand aligned content to grow reach and drive traffic to your business.',
+  'mka-h1': 'AI Agents and Chatbots keep your customer list informed.',
+  'mka-sub': 'AI agents build and run digital campaigns and newsletters for every customer in your network.',
+  'rev-h1': 'AI Agents that turn your reputation into revenue.',
+  'rev-sub': 'Reviews agents automatically request, respond to, and market customer reviews to enhance your brand reputation.',
+  'wd-h1': 'AI coded websites that look beautiful and convert.',
+  'wd-sub': 'AI Agents build customised web sites that build trust, attract customers, and stand out in a competitive digital landscape.',
+  'contact-h1': "Let's talk about your business.",
+  'contact-sub': "We'd love to hear from you. Choose a way to reach us below or fill in the form to get started.",
+  'contact-phone': '02393 190 121',
+  'contact-email': 'projects@dotbusiness.co.uk',
+  'contact-address': 'Suite 8, 95 Elm Grove, Portsmouth, PO5 1LH',
+  'nav-phone': '02393 190 121',
+  'logo-text': 'DotBusiness',
+  'popup-heading': "Let's Find Out How We Can Help",
+  'popup-intro': "Tell us a little about what you need — we'll be in touch to arrange a free, no-obligation conversation.",
+  'popup-intent-q': 'What best describes what you want help with right now?',
+  'popup-note': "We'll call you back — no spam, ever."
+};
+
+// Load from localStorage or use defaults
+function loadCMS() {
+  const stored = localStorage.getItem('db_cms');
+  return stored ? Object.assign({}, DEFAULT_CONTENT, JSON.parse(stored)) : Object.assign({}, DEFAULT_CONTENT);
+}
+
+function saveCMS(data) {
+  localStorage.setItem('db_cms', JSON.stringify(data));
+}
+
+let cmsData = loadCMS();
+
+// AUTH
+const DEFAULT_CREDS = { user: 'admin', pass: 'DotBusiness2025!' };
+
+function getAuth() {
+  const a = localStorage.getItem('db_auth');
+  return a ? JSON.parse(a) : DEFAULT_CREDS;
+}
+
+// ═══════════════════════════════════════════════════════
+// APPLY CMS TO DOM
+// ═══════════════════════════════════════════════════════
+function applyCMS() {
+  document.querySelectorAll('[data-cms]').forEach(el => {
+    const key = el.getAttribute('data-cms');
+    if (cmsData[key] !== undefined) el.textContent = cmsData[key];
+  });
+  // Apply images
+  applyImages();
+}
+
+function applyImages() {
+  const imgKeys = ['sai-img', 'lai-img', 'soci-img', 'mka-img', 'rev-img', 'wd-img',
+                   'card-p1-img', 'card-p2-img', 'card-p3-img', 'card-p4-img', 'card-p5-img', 'card-p6-img'];
+  const imgData = JSON.parse(localStorage.getItem('db_images') || '{}');
+
+  imgKeys.forEach((key) => {
+    const url = imgData[key] || '';
+    const imgEl = document.querySelector('[data-cms-img="' + key + '"]');
+    if (imgEl) {
+      if (url) {
+        imgEl.src = url;
+        imgEl.style.display = 'block';
+        const ph = imgEl.previousElementSibling;
+        if (ph && (ph.classList.contains('image-placeholder') || ph.classList.contains('product-card-image-placeholder'))) ph.style.display = 'none';
+      }
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+// PAGE ROUTING
+// ═══════════════════════════════════════════════════════
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('page-' + pageId);
+  if (target) {
+    target.classList.add('active');
+    window.scrollTo(0, 0);
+    closeMobileMenu();
+  }
+}
+
+function showProductPage(productKey) {
+  showPage('product');
+  document.querySelectorAll('.product-content-wrapper').forEach(w => w.style.display = 'none');
+  const target = document.getElementById('prod-' + productKey);
+  if (target) target.style.display = 'block';
+  window.scrollTo(0, 0);
+  closeMobileMenu();
+}
+
+// ═══════════════════════════════════════════════════════
+// POPUP
+// ═══════════════════════════════════════════════════════
+function openPopup() {
+  document.getElementById('leadPopup').classList.add('open');
+  document.getElementById('popup-form-view').style.display = 'block';
+  document.getElementById('popup-success-view').style.display = 'none';
+  document.body.style.overflow = 'hidden';
+}
+
+function closePopup() {
+  document.getElementById('leadPopup').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('leadPopup').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
+});
+
+function submitLead() {
+  const first = document.getElementById('f-first').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const errEl = document.getElementById('popup-error');
+
+  if (!first || !email || !phone) {
+    errEl.textContent = 'Please fill in your first name, email, and phone number.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  errEl.style.display = 'none';
+  const btnText = document.getElementById('popup-btn-text');
+  btnText.textContent = 'Sending…';
+
+  const intent = document.querySelector('input[name="intent"]:checked');
+  const lead = {
+    id: Date.now(),
+    date: new Date().toLocaleString('en-GB'),
+    first, last: document.getElementById('f-last').value.trim(),
+    email, phone,
+    business: document.getElementById('f-biz').value.trim(),
+    intent: intent ? intent.value : 'Not specified'
+  };
+
+  // Store lead
+  const leads = JSON.parse(localStorage.getItem('db_leads') || '[]');
+  leads.unshift(lead);
+  localStorage.setItem('db_leads', JSON.stringify(leads));
+
+  // Try email endpoint if set
+  const endpoint = localStorage.getItem('db_form_endpoint');
+  if (endpoint) {
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(lead)
+    }).catch(() => {});
+  }
+
+  setTimeout(() => {
+    document.getElementById('popup-form-view').style.display = 'none';
+    document.getElementById('popup-success-view').style.display = 'block';
+    btnText.textContent = 'Send My Enquiry →';
+  }, 800);
+}
+
+// ═══════════════════════════════════════════════════════
+// MOBILE MENU
+// ═══════════════════════════════════════════════════════
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// ═══════════════════════════════════════════════════════
+// CHAT WIDGET
+// ═══════════════════════════════════════════════════════
+function toggleChat() {
+  document.getElementById('chatWindow').classList.toggle('open');
+}
+
+// ═══════════════════════════════════════════════════════
+// CONTACT FORM
+// ═══════════════════════════════════════════════════════
+function submitContactForm() {
+  const first = document.getElementById('ct-first').value.trim();
+  const email = document.getElementById('ct-email').value.trim();
+  if (!first || !email) { alert('Please fill in your name and email.'); return; }
+  alert('Message sent! We\'ll be in touch shortly.');
+  document.getElementById('ct-first').value = '';
+  document.getElementById('ct-last').value = '';
+  document.getElementById('ct-email').value = '';
+  document.getElementById('ct-msg').value = '';
+}
+
+// ═══════════════════════════════════════════════════════
+// ADMIN — AUTH
+// ═══════════════════════════════════════════════════════
+function showAdmin() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('main-footer').style.display = 'none';
+  document.getElementById('ai-chat-widget').style.display = 'none';
+  document.querySelector('nav').style.display = 'none';
+  document.getElementById('adminWrap').style.display = 'block';
+  document.getElementById('adminLogin').style.display = 'flex';
+  document.getElementById('adminPanel').classList.remove('active');
+}
+
+function doLogin() {
+  const auth = getAuth();
+  const u = document.getElementById('loginUser').value;
+  const p = document.getElementById('loginPass').value;
+  if (u === auth.user && p === auth.pass) {
+    document.getElementById('adminLogin').style.display = 'none';
+    document.getElementById('adminPanel').classList.add('active');
+    document.getElementById('loginError').classList.remove('show');
+    loadAdminInputs();
+    renderLeads();
+  } else {
+    document.getElementById('loginError').classList.add('show');
+  }
+}
+
+function doLogout() {
+  document.getElementById('adminPanel').classList.remove('active');
+  document.getElementById('adminWrap').style.display = 'none';
+  document.querySelector('nav').style.display = '';
+  document.getElementById('main-footer').style.display = '';
+  document.getElementById('ai-chat-widget').style.display = 'none';
+  showPage('home');
+}
+
+// ═══════════════════════════════════════════════════════
+// ADMIN — SECTIONS
+// ═══════════════════════════════════════════════════════
+const sectionTitles = {
+  home: 'Home Page', products: 'Product Pages', images: 'Images',
+  popup: 'Lead Gen Popup', settings: 'Settings', leads: 'Leads'
+};
+
+function switchAdmin(id) {
+  document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.admin-nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('as-' + id).classList.add('active');
+  document.getElementById('nav-' + id).classList.add('active');
+  document.getElementById('adminSectionTitle').textContent = sectionTitles[id] || id;
+  if (id === 'leads') renderLeads();
+  if (id === 'settings') {
+    const imgData = JSON.parse(localStorage.getItem('db_images') || '{}');
+    document.getElementById('googleVerify').value = localStorage.getItem('db_google_verify') || '';
+    document.getElementById('gaId').value = localStorage.getItem('db_ga_id') || '';
+  }
+  if (id === 'images') {
+    const imgData = JSON.parse(localStorage.getItem('db_images') || '{}');
+    const keys = ['sai','lai','soci','mka','rev','wd'];
+    keys.forEach(k => {
+      const el = document.getElementById('img-' + k);
+      if (el) el.value = imgData[k + '-img'] || '';
+    });
+    const ep = localStorage.getItem('db_form_endpoint') || '';
+    const epEl = document.getElementById('formEndpoint');
+    if (epEl) epEl.value = ep;
+  }
+  if (id === 'popup') {
+    const ep = localStorage.getItem('db_form_endpoint') || '';
+    const epEl = document.getElementById('formEndpoint');
+    if (epEl) epEl.value = ep;
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// ADMIN — CMS BINDINGS
+// ═══════════════════════════════════════════════════════
+function loadAdminInputs() {
+  cmsData = loadCMS();
+  document.querySelectorAll('[data-bind]').forEach(el => {
+    const key = el.getAttribute('data-bind');
+    if (cmsData[key] !== undefined) el.value = cmsData[key];
+  });
+  // Images
+  const imgData = JSON.parse(localStorage.getItem('db_images') || '{}');
+  const keys = ['sai','lai','soci','mka','rev','wd'];
+  keys.forEach(k => {
+    const el = document.getElementById('img-' + k);
+    if (el) el.value = imgData[k + '-img'] || '';
+  });
+}
+
+function saveAllCMS() {
+  document.querySelectorAll('[data-bind]').forEach(el => {
+    const key = el.getAttribute('data-bind');
+    cmsData[key] = el.value;
+  });
+  saveCMS(cmsData);
+  applyCMS();
+  showToast();
+}
+
+function showToast() {
+  const t = document.getElementById('saveToast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ═══════════════════════════════════════════════════════
+// IMAGES
+// ═══════════════════════════════════════════════════════
+function saveImages() {
+  const imgData = {};
+  const keys = ['sai','lai','soci','mka','rev','wd'];
+  keys.forEach(k => {
+    const el = document.getElementById('img-' + k);
+    if (el && el.value.trim()) imgData[k + '-img'] = el.value.trim();
+  });
+  localStorage.setItem('db_images', JSON.stringify(imgData));
+  applyImages();
+  showToast();
+}
+
+// ═══════════════════════════════════════════════════════
+// SETTINGS
+// ═══════════════════════════════════════════════════════
+function saveGoogleVerify() {
+  const val = document.getElementById('googleVerify').value.trim();
+  localStorage.setItem('db_google_verify', val);
+  document.getElementById('google-site-verification').content = val;
+  showToast();
+}
+
+function saveGA() {
+  const id = document.getElementById('gaId').value.trim();
+  localStorage.setItem('db_ga_id', id);
+  if (id) {
+    const script = document.getElementById('ga-script');
+    script.textContent = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${id}');`;
+    const gtagSrc = document.createElement('script');
+    gtagSrc.async = true;
+    gtagSrc.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    document.head.appendChild(gtagSrc);
+  }
+  showToast();
+}
+
+function saveFormEndpoint() {
+  const ep = document.getElementById('formEndpoint').value.trim();
+  localStorage.setItem('db_form_endpoint', ep);
+  showToast();
+}
+
+function changePassword() {
+  const np = document.getElementById('newPass').value;
+  const nc = document.getElementById('newPassConfirm').value;
+  const msg = document.getElementById('pwMsg');
+  if (!np) { msg.textContent = 'Please enter a new password.'; msg.style.color = '#c62828'; msg.style.display = 'block'; return; }
+  if (np !== nc) { msg.textContent = 'Passwords do not match.'; msg.style.color = '#c62828'; msg.style.display = 'block'; return; }
+  const auth = getAuth();
+  auth.pass = np;
+  localStorage.setItem('db_auth', JSON.stringify(auth));
+  msg.textContent = 'Password updated successfully.';
+  msg.style.color = 'var(--green)';
+  msg.style.display = 'block';
+  document.getElementById('newPass').value = '';
+  document.getElementById('newPassConfirm').value = '';
+}
+
+function exportData() {
+  const data = {
+    cms: loadCMS(),
+    images: JSON.parse(localStorage.getItem('db_images') || '{}'),
+    settings: {
+      googleVerify: localStorage.getItem('db_google_verify') || '',
+      gaId: localStorage.getItem('db_ga_id') || '',
+      formEndpoint: localStorage.getItem('db_form_endpoint') || ''
+    }
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'dotbusiness-backup-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+}
+
+function importData(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (data.cms) saveCMS(data.cms);
+      if (data.images) localStorage.setItem('db_images', JSON.stringify(data.images));
+      if (data.settings) {
+        if (data.settings.googleVerify) localStorage.setItem('db_google_verify', data.settings.googleVerify);
+        if (data.settings.gaId) localStorage.setItem('db_ga_id', data.settings.gaId);
+        if (data.settings.formEndpoint) localStorage.setItem('db_form_endpoint', data.settings.formEndpoint);
+      }
+      cmsData = loadCMS();
+      applyCMS();
+      loadAdminInputs();
+      showToast();
+    } catch { alert('Invalid backup file.'); }
+  };
+  reader.readAsText(file);
+}
+
+function resetCMS() {
+  localStorage.removeItem('db_cms');
+  cmsData = loadCMS();
+  applyCMS();
+  loadAdminInputs();
+  showToast();
+}
+
+// ═══════════════════════════════════════════════════════
+// LEADS
+// ═══════════════════════════════════════════════════════
+function renderLeads() {
+  const leads = JSON.parse(localStorage.getItem('db_leads') || '[]');
+  const container = document.getElementById('leads-list');
+  if (!leads.length) {
+    container.innerHTML = '<p style="font-size:0.9rem;color:var(--grey);text-align:center;padding:32px 0">No leads yet. They\'ll appear here when someone submits the form.</p>';
+    return;
+  }
+  container.innerHTML = leads.map(l => `
+    <div style="border:1px solid var(--mid-grey);border-radius:8px;padding:16px 20px;margin-bottom:12px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;color:var(--text)">${l.first} ${l.last}</div>
+          <div style="font-size:0.82rem;color:var(--grey);margin-top:2px">${l.date}</div>
+        </div>
+        <div style="font-size:0.78rem;background:var(--accent-light);color:var(--accent);padding:3px 10px;border-radius:100px;font-weight:600">${l.intent}</div>
+      </div>
+      <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:16px;font-size:0.85rem;color:var(--dark-grey)">
+        <span>📧 ${l.email}</span>
+        <span>📞 ${l.phone}</span>
+        ${l.business ? '<span>🏢 ' + l.business + '</span>' : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function exportLeads() {
+  const leads = JSON.parse(localStorage.getItem('db_leads') || '[]');
+  if (!leads.length) { alert('No leads to export.'); return; }
+  const headers = ['Date','First Name','Last Name','Email','Phone','Business','Intent'];
+  const rows = leads.map(l => [l.date,l.first,l.last,l.email,l.phone,l.business,l.intent].map(v => '"'+(v||'').replace(/"/g,'""')+'"').join(','));
+  const csv = [headers.join(','), ...rows].join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'dotbusiness-leads-' + new Date().toISOString().slice(0,10) + '.csv';
+  a.click();
+}
+
+function clearLeads() {
+  localStorage.removeItem('db_leads');
+  renderLeads();
+}
+
+// ═══════════════════════════════════════════════════════
+// ADMIN URL TRIGGER
+// ═══════════════════════════════════════════════════════
+// Access admin via URL hash: #admin
+function checkAdminRoute() {
+  if (window.location.hash === '#admin') {
+    showAdmin();
+  }
+}
+
+window.addEventListener('hashchange', function() {
+  if (window.location.hash === '#admin') {
+    showAdmin();
+  } else if (!window.location.hash) {
+    doLogout();
+  }
+});
+
+// ═══════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', function() {
+  cmsData = loadCMS();
+  applyCMS();
+  checkAdminRoute();
+
+  // Apply saved GA if any
+  const gaId = localStorage.getItem('db_ga_id');
+  if (gaId) {
+    const script = document.getElementById('ga-script');
+    script.textContent = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');`;
+    const gtagSrc = document.createElement('script');
+    gtagSrc.async = true;
+    gtagSrc.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+    document.head.appendChild(gtagSrc);
+  }
+
+  // Google verify
+  const gv = localStorage.getItem('db_google_verify');
+  if (gv) document.getElementById('google-site-verification').content = gv;
+});
+</script>
+</body>
+</html>
