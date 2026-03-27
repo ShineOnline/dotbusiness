@@ -6,7 +6,7 @@
 <title data-cms="page-title">Dot Business | Agentic Marketing & AI Automation</title>
 <meta name="description" data-cms="page-description" content="Where AI agents enhance your online visibility, build your brand, and accelerate growth.">
 <!-- Google Site Verification placeholder -->
-<meta id="google-site-verification" name="google-site-verification" content="google992aa9ddf246f3f1.html">
+<meta id="google-site-verification" name="google-site-verification" content="JO3W5nDbLa7UzW9XkvAnDJLxM03-RiJ6rOPdgxuZ8Zk">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7XS9JZKJ3G"></script>
 <script id="ga-script">
@@ -1808,7 +1808,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
               Image coming soon
             </div>
-            <img data-cms-img="card-p6-img" src="https://i.ibb.co/5X96s4fH/Web-Design.jpgg" alt="Web Design" style="display:block">
+            <img data-cms-img="card-p6-img" src="https://i.ibb.co/5X96s4fH/Web-Design.jpg" alt="Web Design" style="display:block">
           </div>
           <h3 data-cms="p6-name">Web Design</h3>
           <p data-cms="p6-desc">Beautiful websites that convert. AI customised web sites that build trust, attract customers, and stand out.</p>
@@ -2958,29 +2958,36 @@ function submitLead() {
   btnText.textContent = 'Sending…';
 
   const intent = document.querySelector('input[name="intent"]:checked');
+  const last = document.getElementById('f-last').value.trim();
+  const business = document.getElementById('f-biz').value.trim();
+  const intentVal = intent ? intent.value : 'Not specified';
+
   const lead = {
     id: Date.now(),
     date: new Date().toLocaleString('en-GB'),
-    first, last: document.getElementById('f-last').value.trim(),
-    email, phone,
-    business: document.getElementById('f-biz').value.trim(),
-    intent: intent ? intent.value : 'Not specified'
+    first, last, email, phone, business, intent: intentVal
   };
 
-  // Store lead
+  // Store lead locally
   const leads = JSON.parse(localStorage.getItem('db_leads') || '[]');
   leads.unshift(lead);
   localStorage.setItem('db_leads', JSON.stringify(leads));
 
-  // Try email endpoint if set
-  const endpoint = localStorage.getItem('db_form_endpoint');
-  if (endpoint) {
-    fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(lead)
-    }).catch(() => {});
-  }
+  // Send to Formspree
+  const formData = new FormData();
+  formData.append('Name', first + ' ' + last);
+  formData.append('Email', email);
+  formData.append('Phone', phone);
+  formData.append('Business', business || 'Not provided');
+  formData.append('Intent', intentVal);
+  formData.append('Date', new Date().toLocaleString('en-GB'));
+  formData.append('_subject', 'New Lead Enquiry — Dot Business');
+
+  fetch('https://formspree.io/f/mojpvgnz', {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  }).catch(() => {});
 
   setTimeout(() => {
     document.getElementById('popup-form-view').style.display = 'none';
