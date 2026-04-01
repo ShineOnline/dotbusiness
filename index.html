@@ -2301,7 +2301,7 @@ viewBox="0 0 29700 21000"
             </div>
             <div>
               <div class="contact-info-label">Email</div>
-              <div class="contact-info-value" data-cms="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1565677a7f7076616655717a617760667c7b7066663b767a3b607e">[email&#160;protected]</a></div>
+              <div class="contact-info-value" data-cms="contact-email">projects@dotbusiness.co.uk</div>
             </div>
           </div>
           <div class="contact-info-card">
@@ -2359,7 +2359,7 @@ viewBox="0 0 29700 21000"
         </div>
         <div class="footer-contact-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span data-cms="footer-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e9999b86838c8a9d9aa98d869d8b9c9a80878c9a9ac78a86c79c82">[email&#160;protected]</a></span>
+          <span data-cms="footer-email">projects@dotbusiness.co.uk</span>
         </div>
         <div class="footer-contact-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -2796,7 +2796,7 @@ viewBox="0 0 29700 21000"
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ═══════════════════════════════════════════════════════
 // STATE & DEFAULTS
 // ═══════════════════════════════════════════════════════
@@ -2822,7 +2822,7 @@ const DEFAULT_CONTENT = {
   'p2-name': 'Reviews AI', 'p2-desc': 'Reviews AI Agents turn reputation into revenue by automating review requests, responses, and marketing.',
   'p3-name': 'Social Media AI', 'p3-desc': 'Social AI Agents author on brand material, publish at peak times, and ensure your business looks active and attractive online.',
   'p4-name': 'Listings AI', 'p4-desc': 'Listings AI Agents optimise presence with uniform branding and information across platforms, boosting visibility and growth.',
-  'p5-name': 'Marketing Automation', 'p5-desc': 'Your AI Assistant answers the phone, takes bookings, and sends email and SMS marketing personalised to your customers.',
+  'p5-name': 'Marketing Automation', 'p5-desc': 'Outreach on autopilot. Marketing Automation AI Agents run email, chatbot, and SMS campaigns personalised for your customers.',
   'p6-name': 'Web Design', 'p6-desc': 'Beautiful websites that convert. AI customised web sites that build trust, attract customers, and stand out.',
   'sai-h1': 'Be the Top Answer for Every Location on Gemini, ChatGPT, Claude, Perplexity.',
   'sai-sub': 'AI agents track, ensure, and boost Answer Engine visibility.',
@@ -3340,4 +3340,16 @@ document.addEventListener('DOMContentLoaded', function() {
   if (gaId) {
     const script = document.getElementById('ga-script');
     script.textContent = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');`;
-    const gt
+    const gtagSrc = document.createElement('script');
+    gtagSrc.async = true;
+    gtagSrc.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+    document.head.appendChild(gtagSrc);
+  }
+
+  // Google verify
+  const gv = localStorage.getItem('db_google_verify');
+  if (gv) document.getElementById('google-site-verification').content = gv;
+});
+</script>
+</body>
+</html>
