@@ -1337,7 +1337,19 @@
     padding: 20px;
   }
 
+    /* ─── FAQ PAGE ─── */
+  .faq-item { border-bottom: 1px solid var(--mid-grey); }
+  .faq-btn { width:100%; background:none; border:none; text-align:left; padding:18px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; font-family:var(--font-body); font-size:0.95rem; font-weight:500; color:var(--text); line-height:1.5; }
+  .faq-btn:hover { color:var(--accent); }
+  .faq-icon { flex-shrink:0; font-size:1.4rem; font-weight:300; color:var(--grey); line-height:1; margin-top:2px; transition:transform 0.22s; }
+  .faq-item.faq-open .faq-icon { transform:rotate(45deg); color:var(--accent); }
+  .faq-answer { display:none; padding:0 40px 20px 0; }
+  .faq-answer p { font-size:0.9rem; color:var(--dark-grey); line-height:1.8; margin-bottom:12px; }
+  .faq-answer p:last-child { margin-bottom:0; }
+  .faq-item.faq-open .faq-answer { display:block; }
+
   /* ─── ADMIN PANEL ─── */
+
   .admin-login {
     min-height: 100vh;
     background: var(--off-white);
@@ -1655,6 +1667,7 @@
   }
 </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Dot Business","url":"https://dotbusiness.co.uk","description":"AI-powered marketing agency helping UK businesses grow online.","email":"projects@dotbusiness.co.uk","telephone":"02393190121","address":{"@type":"PostalAddress","streetAddress":"Suite 8, 95 Elm Grove","addressLocality":"Southsea","addressRegion":"Portsmouth","postalCode":"PO5 1LH","addressCountry":"GB"}},{"@type":"LocalBusiness","name":"Dot Business","url":"https://dotbusiness.co.uk","telephone":"02393190121","email":"projects@dotbusiness.co.uk","address":{"@type":"PostalAddress","streetAddress":"Suite 8, 95 Elm Grove","addressLocality":"Southsea","addressRegion":"Portsmouth","postalCode":"PO5 1LH","addressCountry":"GB"},"areaServed":{"@type":"Country","name":"United Kingdom"}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is AI marketing and how is it different from traditional digital marketing?","acceptedAnswer":{"@type":"Answer","text":"Traditional digital marketing relies on humans creating content, managing accounts, responding to reviews, and running campaigns manually. AI marketing uses intelligent software agents to do those same tasks automatically, continuously, and across multiple platforms at once. At Dot Business, our AI agents monitor your online presence, generate review requests, respond to reviews, publish social content, keep listings accurate, and ensure you appear in AI-powered search results — all without requiring your time or attention."}},{"@type":"Question","name":"What are AI answer engines and why do they matter for my business?","acceptedAnswer":{"@type":"Answer","text":"AI answer engines are platforms like ChatGPT, Gemini, Perplexity, and Claude that give direct answers to questions rather than showing a list of links. Over 50% of consumers now use AI-powered search to make buying decisions. If your business is not optimised to appear in those answers, you are invisible to a significant and growing portion of your potential customers."}},{"@type":"Question","name":"How long does it take to see results from AI marketing?","acceptedAnswer":{"@type":"Answer","text":"Some improvements are visible within 30 days. Meaningful AI visibility across your service area typically develops over 3 to 6 months. Competitive dominance in your category on AI platforms generally takes 6 to 12 months. We track progress monthly with before-and-after AI visibility reports."}},{"@type":"Question","name":"How much does AI marketing cost?","acceptedAnswer":{"@type":"Answer","text":"Social Media AI for local businesses starts at £400 per month. Engineering firms typically invest £800 to £1,000 per month for a package including Answer Engine Optimisation and social media posting. AI Receptionist pricing starts from £400 per month. Web design is a one-off cost from £500 for a template site to £2,000 to £10,000 for a fully bespoke AI-coded build."}},{"@type":"Question","name":"What makes Dot Business different from other marketing agencies?","acceptedAnswer":{"@type":"Answer","text":"Dot Business was founded by someone with 18 years of experience in field service engineering recruitment. We built our services specifically for field service engineering businesses and UK local businesses. We keep our client numbers deliberately small so every business gets genuine attention."}},{"@type":"Question","name":"We get most of our work from referrals. Do we really need AI marketing?","acceptedAnswer":{"@type":"Answer","text":"The people making procurement decisions in 2025 are younger and verify online before they trust. Even warm referrals get Googled and ChatGPT'd before the call is confirmed. A new facilities manager inheriting your contract does their own research. Referrals remain your most valuable lead source. AI marketing is what converts them reliably."}},{"@type":"Question","name":"We serve multiple counties across the UK. How does that affect AI visibility?","acceptedAnswer":{"@type":"Answer","text":"AI platforms treat each county as a separate search market. Most field service businesses only have visibility in their home county — invisible in others even if they physically service them every day. We create county-specific content and build location signals across all major directories for every county you serve."}},{"@type":"Question","name":"What happens to AI visibility when a new facilities manager takes over a building portfolio?","acceptedAnswer":{"@type":"Answer","text":"When a new FM inherits a building portfolio, their first action is to research every incumbent contractor independently using Google, ChatGPT, and LinkedIn. A business with strong AI visibility, recent reviews, and an active LinkedIn presence gets renewed. A business that appears dormant gets questioned or replaced. We build the digital presence that survives FM changeovers."}},{"@type":"Question","name":"Can your AI Receptionist handle emergency callout calls out of hours?","acceptedAnswer":{"@type":"Answer","text":"Yes. The AI Receptionist answers calls 24 hours a day, 7 days a week including evenings, weekends, and bank holidays. It handles emergency callout requests by taking caller details, logging fault type and urgency, and routing to an on-call engineer or sending immediate notifications. It integrates via API with most common scheduling and job management software used in field service."}},{"@type":"Question","name":"Our engineers do excellent work but we struggle to get Google reviews. Can you help?","acceptedAnswer":{"@type":"Answer","text":"We set up an automated review request system that sends a personalised message to the contact at each site within 24 hours of job completion. For a business completing dozens of jobs per month, this typically generates four to eight new genuine Google reviews per month within the first 60 days. We also respond to every review within 48 hours."}},{"@type":"Question","name":"What is the difference between Google SEO and AI search visibility?","acceptedAnswer":{"@type":"Answer","text":"Google SEO is about ranking in the list of blue links that appears when someone searches. AI search visibility is different — when someone asks ChatGPT or Gemini a question, they get a direct answer naming specific businesses. The signals that determine who gets named include business listing consistency, review volume and recency, structured data, and how clearly AI platforms can understand what you do and where you do it."}},{"@type":"Question","name":"How many Google reviews do I need to rank well locally?","acceptedAnswer":{"@type":"Answer","text":"Businesses with more than 40 recent reviews significantly outperform those with fewer than 15. More important than total number is recency — a business with 20 reviews in the last three months will often outrank a business with 100 reviews where the most recent is from 18 months ago."}},{"@type":"Question","name":"How do I get started with Dot Business?","acceptedAnswer":{"@type":"Answer","text":"The first step is a free AI health check. We look at how you appear on AI search platforms, your Google Business Profile, your review profile, your social media presence, and your listings consistency. It takes about 30 minutes and costs nothing. Call us on 02393 190 121 or use the contact form on our website."}}]}</script>
 </head>
 <body>
 
@@ -1683,7 +1696,8 @@
           </div>
         </div>
       </li>
-      <li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li>
+      <li><a onclick="showPage('faq')" style="cursor:pointer">FAQ</a></li>
+<li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li>
     </ul>
 
     <div class="nav-right">
@@ -1708,7 +1722,8 @@
   <a onclick="showProductPage('listings-ai');closeMobileMenu()">Listings AI</a>
   <a onclick="showProductPage('marketing-auto');closeMobileMenu()">Marketing Automation</a>
   <a onclick="showProductPage('web-design');closeMobileMenu()">Web Design</a>
-  <a onclick="showPage('contact');closeMobileMenu()">Contact</a>
+  <a onclick="showPage('faq');closeMobileMenu()">FAQ</a>
+<a onclick="showPage('contact');closeMobileMenu()">Contact</a>
   <button onclick="openPopup();closeMobileMenu()" style="color:var(--accent);font-weight:700;margin-top:8px;">Get Started →</button>
 </div>
 
@@ -2382,7 +2397,8 @@ viewBox="0 0 29700 21000"
         <div class="footer-heading">Company</div>
         <ul class="footer-links">
           <li><button onclick="showPage('home')">Home</button></li>
-          <li><button onclick="showPage('contact')">Contact Us</button></li>
+          <li><button onclick="showPage('faq')">FAQ</button></li>
+<li><button onclick="showPage('contact')">Contact Us</button></li>
           <li><button onclick="openPopup()">Get Started</button></li>
           <li><button onclick="openPopup()">Free AI Health Check</button></li>
         </ul>
@@ -2396,6 +2412,256 @@ viewBox="0 0 29700 21000"
 </footer>
 
 <!-- ═══════════════════════════════════════════════════════
+     FAQ PAGE
+═══════════════════════════════════════════════════════ -->
+<div class="page" id="page-faq">
+  <section style="background:var(--off-white); padding:60px 5% 80px;">
+    <div style="max-width:760px; margin:0 auto">
+      <span class="section-label">Frequently Asked Questions</span>
+      <h1 class="section-headline" style="margin-bottom:12px">Everything you need to know about AI marketing for your business</h1>
+      <p class="section-sub">Straight answers to the questions business owners and engineering directors ask us most. If you don't see yours, get in touch — we're always happy to talk.</p>
+
+      <div style="margin-top:48px">
+
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--dark-grey);margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--mid-grey)">General questions about AI marketing</div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>What is AI marketing and how is it different from traditional digital marketing?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Traditional digital marketing relies on humans creating content, managing accounts, responding to reviews, and running campaigns manually — which is time-consuming, inconsistent, and expensive at scale.</p>
+            <p>AI marketing uses intelligent software agents to do those same tasks automatically, continuously, and across multiple platforms at once. At Dot Business, our AI agents monitor your online presence, generate review requests after every completed job, respond to reviews, publish social content, keep your business listings accurate, and ensure you appear in AI-powered search results — all without requiring your time or attention.</p>
+            <p>The result is a marketing operation that never sleeps, never forgets, and scales with your business.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>What are AI answer engines and why do they matter for my business?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>AI answer engines are platforms like ChatGPT, Gemini, Perplexity, and Claude that give direct answers to questions rather than showing a list of links. When someone asks "who are the best fire alarm maintenance companies in the Midlands?" — these platforms name specific businesses. They don't show ten blue links. They make a recommendation.</p>
+            <p>Over 50% of consumers now use AI-powered search to make buying decisions, according to McKinsey &amp; Company. That percentage is growing rapidly. If your business isn't optimised to appear in those answers, you're invisible to a significant and growing portion of your potential customers — regardless of how good your website is.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>How long does it take to see results from AI marketing?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We are always honest about this because most agencies overpromise on timescales.</p>
+            <p>Some improvements are visible within 30 days — particularly in how your business appears in direct AI searches and how your Google Business Profile performs. Meaningful, consistent AI visibility across your service area typically develops over 3 to 6 months of sustained work. Competitive dominance in your category on AI platforms generally takes 6 to 12 months.</p>
+            <p>We track progress monthly with before-and-after AI visibility reports so you always know exactly where you stand. We'd rather show you real steady progress than promise overnight results we can't deliver.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>How much does AI marketing cost?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Social Media AI for local businesses starts at £400 per month. Engineering firms typically invest £800–£1,000 per month for a package including ongoing Answer Engine Optimisation and social media posting, given the more specialised content involved.</p>
+            <p>AI Receptionist pricing starts from £400 per month. Web design is a one-off cost — from £500 for a template site to £2,000–£10,000 for a fully bespoke AI-coded build.</p>
+            <p>Reviews AI, Listings AI, and Marketing Automation services are available to add on when packaged together with our core services.</p>
+            <p>Our services are designed to be accessible to businesses turning over £500k to £5m. We work on monthly retainers rather than large one-off fees, which keeps the investment manageable and ties our performance to your ongoing results.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>What makes Dot Business different from other marketing agencies?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Most marketing agencies will tell you they specialise in everything. We don't.</p>
+            <p>Dot Business was founded by someone with 18 years of experience in field service engineering recruitment. We understand the business models, the margin pressures, the FM relationships, the contract renewal cycles, and the operational demands that leave no time for marketing.</p>
+            <p>We built our services specifically for field service engineering businesses and UK local businesses — not as an afterthought, but as our core focus. That means our AI agents, our processes, and our language are calibrated for your world, not adapted from a generic template.</p>
+            <p>We also keep our client numbers deliberately small so every business we work with gets genuine attention, not a ticket number.</p>
+          </div>
+        </div>
+
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--dark-grey);margin:40px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--mid-grey)">For field service engineering businesses</div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>We get most of our work from referrals and relationships. Do we really need AI marketing?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>This is the most common thing we hear from field service MDs — and it's completely understandable. Referrals have worked for years. The business is running well. Why change?</p>
+            <p>Here's what's changing whether you engage with it or not. The people making procurement decisions in 2025 are younger, they verify online before they trust, and they use AI platforms to research contractors. Even warm referrals get Googled — and increasingly Gemini'd and ChatGPT'd — before the call is confirmed. A new facilities manager inheriting your contract doesn't have the relationship history your existing contact had. They do their own research.</p>
+            <p>We've seen excellent field service businesses lose contracts not because their service slipped, but because a competitor looked more credible online. The referral opened the door — the digital presence either confirmed or killed the deal.</p>
+            <p>Referrals remain your most valuable lead source. AI marketing is what converts them reliably.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>We serve multiple counties across the UK. How does that affect AI visibility?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Multi-county coverage is actually where AI visibility optimisation delivers the most value — and where most field service businesses have the biggest gaps.</p>
+            <p>AI platforms treat each county as a separate search market. A business based in Coventry serving Warwickshire, Leicestershire, and Northamptonshire needs to be optimised for all three counties separately. A search for "best HVAC contractors in Leicestershire" and "best HVAC contractors in Northamptonshire" are two completely different queries with potentially different results.</p>
+            <p>Most field service businesses only have visibility in their home county — invisible in the others even if they physically service them every day.</p>
+            <p>We create county-specific content, optimise your Google Business Profile service areas correctly, and build location signals across all major directories for every county you serve. For a business operating across three or more counties, this typically represents the single biggest untapped visibility opportunity.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>What happens to AI visibility when a new facilities manager takes over a building portfolio?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>This is one of the most important questions in field service — and one of the least talked about.</p>
+            <p>When a new FM inherits a building portfolio, their first action is almost always to research every incumbent contractor independently. They don't have the relationship history. They use online platforms — Google, ChatGPT, LinkedIn — to decide who to trust.</p>
+            <p>A business with strong AI visibility, recent reviews, an active LinkedIn presence, and a clean professional online profile gets renewed. A business that appears dormant, has old reviews, or doesn't appear in AI search results gets questioned — or replaced.</p>
+            <p>We build the digital presence that survives FM changeovers. That means recent, genuine reviews. Consistent listings. AI search visibility. An active social presence that shows the business is thriving. All of it running automatically, so it's always current regardless of when a new FM checks.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Can your AI Receptionist handle emergency callout calls out of hours?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — this is one of the most valuable applications of the AI Receptionist for field service businesses.</p>
+            <p>The AI Receptionist answers calls 24 hours a day, 7 days a week — including evenings, weekends, and bank holidays. It handles out-of-hours emergency callout requests by taking the caller's details, logging the fault type and urgency, and either routing to an on-call engineer or sending an immediate notification to whoever manages out-of-hours response.</p>
+            <p>For businesses that currently rely on an engineer's personal mobile for emergency callouts, or a voicemail system that gets checked the next morning, this represents a significant improvement — both in customer experience and in making sure genuine emergencies are escalated immediately.</p>
+            <p>The system integrates via API with most common scheduling and job management software used in field service.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Our engineers do excellent work but we struggle to get Google reviews. Can you help?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely — and this is one of the most common gaps we see in field service businesses.</p>
+            <p>The problem is rarely that customers are unhappy. It's that nobody asks. After a successful PPM visit or a callout that got resolved quickly, the engineer moves on to the next job. The customer is satisfied but doesn't think to leave a review unless prompted.</p>
+            <p>We set up an automated review request system that sends a personalised message to the contact at each site within 24 hours of job completion. The timing and message are calibrated to maximise response rates. For a business completing dozens of jobs per month, this typically generates four to eight new genuine Google reviews per month within the first 60 days.</p>
+            <p>We also respond to every review on your behalf — positive and negative — within 48 hours, in language consistent with your brand.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>We already have a website. Do we need a new one to work with you?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Not necessarily. Many of our field service clients have existing websites that are fundamentally fine but lack the content signals that AI platforms need — clear service descriptions, location-specific pages for each county served, FAQ content, and structured data markup.</p>
+            <p>In those cases we work with what exists, adding the missing AEO signals without requiring a full rebuild.</p>
+            <p>Where a website is genuinely outdated — slow, not mobile-friendly, or not reflecting the current quality of the business — we offer web design as a separate service, either as a template site or a fully bespoke build.</p>
+            <p>We'll give you an honest assessment during the free audit. We won't recommend a new website if the existing one doesn't need it.</p>
+          </div>
+        </div>
+
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--dark-grey);margin:40px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--mid-grey)">For local businesses</div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>I run a small local business. Is AI marketing relevant to me?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — and in some ways more immediately than for larger businesses.</p>
+            <p>Local businesses live or die by their local visibility. When someone in your town searches for what you offer — whether on Google, ChatGPT, or by asking a Facebook group — appearing prominently is the difference between a new customer and that customer going to your competitor.</p>
+            <p>AI marketing for local businesses focuses on exactly this: making sure you appear when and where local customers are searching, building a consistent flow of Google reviews, keeping your information accurate across every platform, and maintaining a social media presence that makes your business look active and trustworthy.</p>
+            <p>You don't need a large budget or a marketing team. You need the right systems running in the background. That's what we build.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>What is the difference between Google SEO and AI search visibility?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Traditional Google SEO is about ranking in the list of blue links that appears when someone searches. You optimise your website to appear high in that list.</p>
+            <p>AI search visibility is different. When someone asks ChatGPT, Gemini, or Perplexity a question, they don't get a list of links — they get a direct answer that names specific businesses. The signals that determine who gets named are different to traditional SEO: business listing consistency, review volume and recency, structured data on your website, how often your business is mentioned across the web, and how clearly AI platforms can understand what you do and where you do it.</p>
+            <p>Most local businesses have invested in Google SEO to some degree. Almost none have optimised for AI search. This represents a significant opportunity for the businesses that move first.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>How many Google reviews do I need to rank well locally?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>There's no magic number, but research consistently shows that businesses with more than 40 recent reviews significantly outperform those with fewer than 15 — in both search ranking and customer trust.</p>
+            <p>More important than the total number is recency. Google weights recent reviews heavily. A business with 20 reviews in the last three months will often outrank a business with 100 reviews where the most recent is from 18 months ago.</p>
+            <p>We automate review generation after every customer interaction — appointment, visit, completed job — so your review count grows consistently month by month without you having to ask anyone manually.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>What happens if I get a negative review?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Handling negative reviews well is one of the most underrated reputation management opportunities available to a small business.</p>
+            <p>Research shows that potential customers read negative reviews almost as carefully as positive ones — and they pay close attention to how the business responds. A thoughtful, professional response to a negative review can actually build trust with prospective customers who see that you take feedback seriously and resolve issues.</p>
+            <p>We monitor all your reviews across Google, Facebook, and other platforms. When a negative review comes in, we draft a response that acknowledges the concern, addresses it professionally, and invites the customer to resolve it directly. You review and approve before anything goes live.</p>
+            <p>What we don't do is ignore negative reviews or leave them unanswered — which is unfortunately what most businesses do, and which does real damage to perception.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>I don't have time to think about social media. How does Social Media AI work?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our Social Media AI service is designed specifically for business owners who don't have time for social media — which is most of them.</p>
+            <p>We create a monthly content plan for your business based on your services, your tone, and what performs best in your industry. Our AI agents draft the posts. Our account managers review and refine them. They're scheduled to go out at peak engagement times. You don't write a word or think about it.</p>
+            <p>The result is a social media presence that looks active, professional, and on-brand — posting consistently three times per week across LinkedIn, Facebook, and Instagram.</p>
+            <p>For local businesses, consistent posting matters more than follower count. When a potential customer checks your page before deciding whether to book, recent posts signal that the business is active, credible, and worth contacting. A page with nothing posted in six months sends the opposite message — even if the business is excellent.</p>
+          </div>
+        </div>
+
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--dark-grey);margin:40px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--mid-grey)">Getting started</div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>How do I get started with Dot Business?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The first step is always a free AI health check.</p>
+            <p>We look at exactly where your business currently stands — how you appear on AI search platforms, the state of your Google Business Profile, your review profile, your social media presence, and your listings consistency across the web.</p>
+            <p>It takes about 30 minutes and costs nothing. There's no obligation and no sales pressure. We'll give you an honest picture of where the gaps are and what would make the biggest difference.</p>
+            <p>If after that conversation you'd like to work with us, we'll put together a plan. If not, you leave with genuinely useful information about your business's online presence.</p>
+            <p>To book your free health check, call us on 02393 190 121 or use the contact form on this page.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:56px; background:linear-gradient(135deg,#0a1628 0%,#0d2045 100%); border-radius:20px; padding:48px 40px; text-align:center">
+        <span class="section-label" style="color:var(--green)">Free AI Health Check</span>
+        <h2 style="font-family:var(--font-main);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:white;margin:8px 0 12px;letter-spacing:-0.02em">Ready to see where your business stands?</h2>
+        <p style="color:rgba(255,255,255,0.7);margin-bottom:28px;font-size:1rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7">30 minutes, no cost, no obligation. We'll show you exactly where you're visible and where you're not.</p>
+        <button class="btn btn-green btn-primary-lg" onclick="openPopup()">Get a free AI health check</button>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     CONTACT PAGE
      LEAD GEN POPUP
 ═══════════════════════════════════════════════════════ -->
 <div class="popup-overlay" id="leadPopup">
@@ -3311,6 +3577,14 @@ function clearLeads() {
 }
 
 // ═══════════════════════════════════════════════════════
+// FAQ ACCORDION
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('faq-open');
+  document.querySelectorAll('.faq-item.faq-open').forEach(i => i.classList.remove('faq-open'));
+  if (!isOpen) item.classList.add('faq-open');
+}
+
 // ADMIN URL TRIGGER
 // ═══════════════════════════════════════════════════════
 // Access admin via URL hash: #admin
