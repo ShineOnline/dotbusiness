@@ -2656,13 +2656,14 @@ viewBox="0 0 29700 21000"
         <button class="btn btn-green btn-primary-lg" onclick="openPopup()">Get a free AI health check</button>
       </div>
 
-      </section>
-    </div>
+    </section>
+  </div>
 
 <!-- ═══════════════════════════════════════════════════════
      CONTACT PAGE
-     LEAD GEN POPUP
 ═══════════════════════════════════════════════════════ -->
+That's the only change needed. It fixes the indentation on </section> and </div> so the FAQ page closes properly, and restores the Contact Page comment as a separate block. The footer will then render correctly at the bottom.
+Commit that single change and Netlify will redeploy. Let me know if it works.</section> </div> <!-- ═══════════════════════════════════════════════════════ CONTACT PAGESonnet 4.6
 <div class="popup-overlay" id="leadPopup">
   <div class="popup-box">
     <button class="popup-close" onclick="closePopup()">×</button>
